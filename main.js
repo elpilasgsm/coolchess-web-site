@@ -102,35 +102,41 @@ document.querySelectorAll('#nav-links a').forEach(link => link.addEventListener(
 }));
 
 const quizQuestions = [
-  { question: 'Для кого ищете занятия?', options: ['Для ребёнка 4–7 лет', 'Для ребёнка 7–12 лет', 'Для ребёнка с опытом', 'Для взрослого'] },
-  { question: 'Какая цель ближе?', options: ['Познакомиться с шахматами', 'Играть увереннее', 'Готовиться к турнирам'] },
-  { question: 'Какая длительность подходит?', options: ['25 минут', '45 минут', '60 минут'] }
+  { question: 'Кто будет заниматься?', options: ['ребёнок 4–6 лет', 'ребёнок 7–12 лет', 'подросток', 'взрослый 18+'] },
+  { question: 'Какой сейчас уровень?', options: ['новичок', 'знает правила', 'умеет играть', 'турнирный уровень'] },
+  { question: 'Какая цель?', options: ['научиться играть', 'развивать мышление', 'играть в турнирах', 'получить разряд'] }
 ];
 let quizStep = 0;
-let quizAnswers = [];
+const quizSection = document.querySelector('#quiz');
+const quizFlow = document.querySelector('#quiz-flow');
+
 function renderQuiz() {
-  const content = document.querySelector('#quiz-content');
   if (quizStep < quizQuestions.length) {
     const current = quizQuestions[quizStep];
-    content.innerHTML = `<span class="quiz-progress">Вопрос ${quizStep + 1} из 3</span><h3 class="quiz-question">${current.question}</h3>${current.options.map((option,index) => `<button class="quiz-option" type="button" data-answer="${index}">${option} ↗</button>`).join('')}`;
-    content.querySelectorAll('[data-answer]').forEach(button => button.addEventListener('click', () => {
-      quizAnswers.push(current.options[Number(button.dataset.answer)]);
+    quizFlow.innerHTML = `<h2 class="quiz-question" tabindex="-1">${current.question}</h2>
+      <div class="quiz-options">${current.options.map(option => `<button class="quiz-option" type="button">${option}</button>`).join('')}</div>
+      <div class="quiz-progress" role="progressbar" aria-label="Вопросы подбора обучения" aria-valuemin="0" aria-valuemax="3" aria-valuenow="${quizStep + 1}"><span style="width:${(quizStep + 1) * 33.333}%"></span></div>
+      <span class="quiz-step-count">${quizStep + 1}/3</span>`;
+    quizFlow.querySelectorAll('.quiz-option').forEach(button => button.addEventListener('click', () => {
       quizStep++;
       renderQuiz();
     }));
   } else {
-    const choice = quizAnswers[2] || '45 минут';
-    duration = Number(choice.split(' ')[0]);
-    renderPrices();
-    content.innerHTML = `<div class="quiz-result"><span class="eyebrow">Готово</span><h3>Рекомендуем персональные занятия по ${duration} минут</h3><p>На пробном уроке тренер уточнит уровень и поможет выбрать программу.</p><button class="btn btn-purple" type="button" id="quiz-to-trial">Записаться на пробный урок ↗</button></div>`;
-    content.querySelector('#quiz-to-trial').addEventListener('click', () => { closeModals(); openTrial(); });
+    quizSection.classList.add('quiz-finished');
+    quizFlow.innerHTML = `<h2 class="quiz-question quiz-final-title" tabindex="-1">Начнём<br>с пробного урока</h2>
+      <div class="quiz-registration"><iframe title="Регистрация на первый пробный урок в AlfaCRM" loading="eager"></iframe>
+      <a href="${trialUrl}" target="_blank" rel="noopener noreferrer">Открыть форму записи в новом окне ↗</a></div>`;
+    quizFlow.querySelector('iframe').src = trialUrl;
   }
+  quizFlow.querySelector('h2').focus({ preventScroll: true });
+  quizSection.scrollIntoView({ block: 'start' });
 }
 document.querySelector('#start-quiz').addEventListener('click', () => {
   quizStep = 0;
-  quizAnswers = [];
+  quizSection.classList.add('quiz-active');
+  document.querySelector('#quiz-intro').hidden = true;
+  quizFlow.hidden = false;
   renderQuiz();
-  openModal('quiz-modal');
 });
 
 renderPrices();

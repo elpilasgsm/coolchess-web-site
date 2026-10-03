@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="refinements.css">
   <link rel="stylesheet" href="hero.css">
   <link rel="stylesheet" href="audience.css">
+  <link rel="stylesheet" href="quiz.css">
   <script src="main.js" defer></script>
 </head>
 <body>
@@ -114,7 +115,16 @@
       </div>
     </section>
 
-    <section class="quiz-banner wrap" id="quiz"><img src="assets/28.webp" alt="Яркая шахматная композиция"><div><span class="eyebrow">Найдём ваш формат</span><h2>Подберём обучение<br>за 30 секунд</h2><p>Ответьте на три вопроса — и мы покажем подходящий формат.</p><button class="btn btn-dark" id="start-quiz">Подобрать обучение <span>↗</span></button></div></section>
+    <section class="quiz-banner" id="quiz" aria-label="Подбор обучения">
+      <img class="quiz-king" src="assets/quiz-king.png" alt="" aria-hidden="true">
+      <img class="quiz-pawn" src="assets/quiz-pawn.png" alt="" aria-hidden="true">
+      <div class="quiz-intro" id="quiz-intro">
+        <h2>Подберём обучение<br>за 30 секунд</h2>
+        <div class="quiz-start-shell"><span class="quiz-start-art" aria-hidden="true"></span><button class="quiz-start-button" id="start-quiz" type="button">Подобрать<br>обучение</button></div>
+        <p>Ответьте на три вопроса —<br>и мы покажем подходящий формат</p>
+      </div>
+      <div class="quiz-flow" id="quiz-flow" aria-live="polite" hidden></div>
+    </section>
 
     <section class="section wrap pricing" id="pricing">
       <div class="section-heading"><div><span class="eyebrow">Стоимость</span><h2>У каждого свой<br><em>темп игры</em></h2></div><p>Выберите длительность занятия. Покажем цену одного урока и абонементов.</p></div>
@@ -147,6 +157,5 @@
 
   <div class="modal" id="payment-modal" hidden><div class="modal-backdrop" data-close-modal></div><div class="modal-dialog payment-dialog" role="dialog" aria-modal="true" aria-labelledby="payment-title"><div class="modal-head"><div><span class="eyebrow">Безопасная оплата</span><h2 id="payment-title">Оплата занятий</h2></div><button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button></div><form id="payment-form" action="https://coolchess1.server.paykeeper.ru/create/" method="POST"><input type="hidden" name="service_name" id="pay-service"><input type="hidden" name="sum" id="pay-sum"><div class="payment-block"><span class="step-number">1</span><div><h3>Выберите количество занятий</h3><div class="payment-options" id="payment-options"></div></div></div><div class="payment-block"><span class="step-number">2</span><div><h3>Укажите ваши данные</h3><div class="field-grid"><label>ФИО<input name="clientid" autocomplete="name" required></label><label>Email<input name="client_email" type="email" autocomplete="email" required></label><label>Телефон<input name="client_phone" type="tel" autocomplete="tel" required></label></div><label class="check"><input type="checkbox" required> <span>Я согласен с <a href="docs/privacy.pdf" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a></span></label><label class="check"><input type="checkbox" required> <span>Я согласен с <a href="docs/video-policy.pdf" target="_blank" rel="noopener noreferrer">политикой использования видеоматериалов</a></span></label><label class="check"><input type="checkbox" required> <span>Я согласен с условиями <a href="docs/offer.pdf" target="_blank" rel="noopener noreferrer">договора оферты</a></span></label></div></div><div class="payment-bottom"><div><span>Выбрано</span><strong id="payment-summary">—</strong></div><button class="btn btn-purple" type="submit">Перейти к оплате ↗</button></div><p class="payment-note">Оплата на защищённой странице PayKeeper. Данные карты на этом сайте не вводятся.</p></form></div></div>
 
-  <div class="modal" id="quiz-modal" hidden><div class="modal-backdrop" data-close-modal></div><div class="modal-dialog quiz-dialog" role="dialog" aria-modal="true" aria-labelledby="quiz-title"><div class="modal-head"><div><span class="eyebrow">Подбор обучения</span><h2 id="quiz-title">Найдём вашу программу</h2></div><button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button></div><div id="quiz-content"></div></div></div>
 </body>
 </html>

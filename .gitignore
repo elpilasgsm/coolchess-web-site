@@ -5,3 +5,4 @@ thumbnail.png
 node_modules/
 tools/
 ssh_creds.txt
+transfer/
