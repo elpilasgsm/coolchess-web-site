@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#64bfff">
+  <meta name="description" content="CoolChess — шахматная онлайн-школа для детей и взрослых. Персональные занятия, турниры и пробный урок.">
+  <title>CoolChess — шахматы, которые увлекают</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-sky" aria-hidden="true"></div>
+    <nav class="nav wrap" aria-label="Основная навигация">
+      <a class="brand" href="#top" aria-label="CoolChess — наверх"><img src="assets/10.webp" alt="CoolChess"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#learning">Обучение</a><a href="#programs">Программы</a><a href="#trainers">Тренеры</a><a href="#tournaments">Турниры</a><a href="#results">Результаты</a><a href="#about">О школе</a>
+        <a class="login-link" href="https://coolchess.s20.online/" target="_blank" rel="noopener noreferrer">Войти ↗</a>
+      </div>
+    </nav>
+    <div class="hero-content wrap">
+      <div class="hero-copy">
+        <span class="eyebrow eyebrow-light">Онлайн-школа шахмат CoolChess</span>
+        <h1>Шахматы,<br>которые увлекают.<br><em>Навыки, которые остаются.</em></h1>
+        <p>Персональные занятия с профессиональным тренером. Первый урок — 500 ₽, без обязательств по покупке абонемента.</p>
+        <div class="hero-actions"><button class="btn btn-lime" data-open-trial>Записаться на пробный урок <span>↗</span></button><a class="text-link light" href="#programs">Выбрать программу ↓</a></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <img class="hero-child" src="assets/18.webp" alt="">
+        <img class="hero-king" src="assets/13.webp" alt="">
+        <img class="hero-pawn" src="assets/14.webp" alt="">
+        <img class="hero-knight" src="assets/15.webp" alt="">
+        <div class="hero-bubble bubble-one">♟ Первый ход к большой игре</div>
+        <div class="hero-bubble bubble-two">Осенний турнир уже идёт 🍂</div>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">♞</div>
+    </div>
+    <div class="hero-bottom wrap"><span>Школа, в которую хочется возвращаться</span><span>Листайте вниз ↓</span></div>
+  </header>
+
+  <main>
+    <section class="facts wrap" id="about" aria-label="О школе">
+      <article><span class="fact-number">01/</span><h3>Индивидуальная программа</h3><p>План занятий для возраста, уровня и цели ученика.</p></article>
+      <article><span class="fact-number">02/</span><h3>Онлайн из любой точки</h3><p>Занятия и турниры доступны, где бы вы ни находились.</p></article>
+      <article class="fact-license"><span class="fact-number">✓</span><h3>Лицензированная школа</h3><p>Л035-01218-23/04245470</p></article>
+      <article class="fact-count"><strong>200+</strong><span>счастливых учеников</span></article>
+    </section>
+
+    <section class="section wrap audience" id="programs">
+      <div class="section-heading"><div><span class="eyebrow">Для каждого уровня</span><h2>Программа, которая<br><em>подходит вам</em></h2></div><p>Подберём занятия под возраст, уровень и цель ученика. Неважно, с чего вы начинаете.</p></div>
+      <div class="audience-grid">
+        <article class="audience-card audience-lilac"><span class="audience-age">4–7 лет</span><img src="assets/17.webp" alt="Фиолетовая шахматная фигура"><div><span class="audience-icon">♟</span><h3>Первый шаг</h3><p>Познакомиться с шахматами через игру</p></div><button data-open-trial aria-label="Записаться на занятия для детей 4–7 лет">↗</button></article>
+        <article class="audience-card audience-blue"><span class="audience-age">7–12 лет</span><img src="assets/15.webp" alt="Синяя шахматная фигура"><div><span class="audience-icon">♞</span><h3>Уверенный игрок</h3><p>Систематизировать знания и научиться играть сильнее</p></div><button data-open-trial aria-label="Записаться на занятия для детей 7–12 лет">↗</button></article>
+        <article class="audience-card audience-pink"><span class="audience-age">Для детей с опытом</span><img src="assets/22.webp" alt="Розовая шахматная композиция"><div><span class="audience-icon">🏆</span><h3>Турнирный уровень</h3><p>Подготовка к соревнованиям и рост рейтинга</p></div><button data-open-trial aria-label="Записаться на турнирную подготовку">↗</button></article>
+        <article class="audience-card audience-lime"><span class="audience-age">18+ лет</span><img src="assets/20.webp" alt="Взрослый ученик"><div><span class="audience-icon">✦</span><h3>Взрослые</h3><p>Для себя, семьи или возвращения в шахматы</p></div><button data-open-trial aria-label="Записаться на занятия для взрослых">↗</button></article>
+      </div>
+    </section>
+
+    <section class="quiz-banner wrap" id="quiz"><img src="assets/28.webp" alt="Яркая шахматная композиция"><div><span class="eyebrow">Найдём ваш формат</span><h2>Подберём обучение<br>за 30 секунд</h2><p>Ответьте на три вопроса — и мы покажем подходящий формат.</p><button class="btn btn-dark" id="start-quiz">Подобрать обучение <span>↗</span></button></div></section>
+
+    <section class="section wrap pricing" id="pricing">
+      <div class="section-heading"><div><span class="eyebrow">Стоимость</span><h2>У каждого свой<br><em>темп игры</em></h2></div><p>Выберите длительность занятия. Покажем цену одного урока и абонементов.</p></div>
+      <div class="pricing-panel">
+        <div class="duration-chooser"><div><span class="eyebrow">Выберите длительность</span><h3 id="price-title">Идеально для самых маленьких</h3><p id="price-description">Детям с 4 до 7 лет</p></div><div class="segments" role="group" aria-label="Длительность занятия"><button class="active" data-duration="25" aria-pressed="true">25 минут</button><button data-duration="45" aria-pressed="false">45 минут</button><button data-duration="60" aria-pressed="false">60 минут</button></div></div>
+        <div class="price-grid" id="price-grid"></div>
+        <div class="pricing-footer"><p>Пробный урок — <strong>500 ₽</strong>. Без обязательств.</p><div><button class="btn btn-purple" data-open-trial>Записаться на пробный урок ↗</button><button class="btn btn-dark" id="open-payment">Оплатить занятия ↗</button></div></div>
+        <p class="payment-hint">Оплата абонементов проходит через PayKeeper. Для действующих учеников доступен <a href="https://coolchess.s20.online/" target="_blank" rel="noopener noreferrer">личный кабинет AlfaCRM ↗</a>.</p>
+      </div>
+    </section>
+
+    <section class="section learning" id="learning"><div class="wrap"><div class="section-heading"><div><span class="eyebrow">От первого урока до уверенной игры</span><h2>Как проходит<br><em>обучение онлайн</em></h2></div></div><div class="steps"><article><span>01/</span><h3>Диагностика</h3><p>Определяем текущий уровень и цели.</p></article><article><span>02/</span><h3>Персональная программа</h3><p>Тренер формирует план занятий.</p></article><article><span>03/</span><h3>Практика</h3><p>Задачи, партии, интерактивная доска.</p></article><article><span>04/</span><h3>Турниры</h3><p>Применяем знания в настоящей игре.</p></article><article><span>05/</span><h3>Рост</h3><p>Отслеживаем прогресс и корректируем программу.</p></article></div></div></section>
+
+    <section class="section wrap results" id="results"><div class="section-heading"><div><span class="eyebrow">Больше, чем шахматы</span><h2>Растём не только<br><em>в шахматах</em></h2></div><p>Для нас важен результат партии и то, как меняется сам ученик.</p></div><div class="results-grid"><article><strong>+20%</strong><span>решаемость задач</span></article><article><strong>+33%</strong><span>учеников участвуют в соревнованиях</span></article><article class="story-card"><div class="story-portrait"><img src="assets/53.webp" alt="Юная ученица"></div><div><span>История ученика</span><h3>Маша, 9 лет</h3><p>Пришла, не зная всех правил. Теперь участвует в турнирах.</p></div></article></div></section>
+
+    <section class="trial-section wrap"><div><span class="eyebrow">Определение уровня · Обратная связь · Рекомендации</span><h2>Попробуйте.<br>Познакомьтесь.<br><em>Решите.</em></h2><p>Первый урок поможет познакомиться с тренером и выбрать дальнейшую программу. 500 ₽, без обязательств.</p><button class="btn btn-lime" data-open-trial>Записаться на пробный урок ↗</button></div><img src="assets/24.webp" alt="Ребёнок с шахматной фигурой"></section>
+
+    <section class="section wrap trainers" id="trainers"><div class="section-heading"><div><span class="eyebrow">Наша команда</span><h2>Ваш тренер —<br><em>не случайный преподаватель</em></h2></div><p>Каждый тренер проходит отбор и работает с определёнными уровнями и задачами.</p></div><div class="trainer-grid"><article><img src="assets/43.webp" alt="Эльмар Валерьевич"><span>Основатель школы · 15 лет опыта</span><h3>Эльмар Валерьевич</h3><p>Кандидат технических наук, кандидат в мастера спорта</p></article><article><img src="assets/44.webp" alt="Тренер CoolChess"><span>Тренер CoolChess</span><h3>Персональный подход</h3><p>Помогаем уверенно двигаться к цели.</p></article><article><img src="assets/46.webp" alt="Тренер CoolChess"><span>Тренер CoolChess</span><h3>Сильная команда</h3><p>Учимся понимать шахматы и получать удовольствие от игры.</p></article></div></section>
+
+    <section class="section wrap tournaments" id="tournaments"><div class="tournament-photo"><img src="assets/05.webp" alt="Ученики на турнире"></div><div><span class="eyebrow">Турниры CoolChess</span><h2>Играем,<br><em>побеждаем, растём</em></h2><p>Сейчас наши дети играют в осеннем турнире. Следим за партиями, поддерживаем друг друга и набираемся турнирного опыта.</p><button class="btn btn-dark" data-open-trial>Присоединиться ↗</button></div></section>
+
+    <section class="section wrap license"><div><span class="eyebrow">Государственная лицензия</span><h2>Обучение<br><em>со статусом</em></h2><p>Официальная лицензия позволяет получить налоговый вычет и гарантирует соответствие образовательным стандартам.</p><a class="text-link" href="docs/license.pdf" target="_blank" rel="noopener noreferrer">Открыть лицензию ↗</a></div><div class="license-card"><span>Школе можно доверять</span><h3>Лицензия<br>Л035-01218-23/04245470</h3><p>Министерство просвещения РФ</p><div><strong>13%</strong><span>налоговый вычет<br>от стоимости обучения</span></div></div></section>
+
+    <section class="kids" id="kids"><div class="wrap"><div class="section-heading"><div><span class="eyebrow">Дети CoolChess</span><h2>Яркие моменты<br><em>счастливого детства</em></h2></div></div><div class="kids-gallery"><img src="assets/02.webp" alt="Победа юного шахматиста"><img src="assets/03.webp" alt="Участница турнира"><img src="assets/06.webp" alt="Юная ученица с наградой"><img src="assets/07.webp" alt="Награды с турнира"><img src="assets/08.webp" alt="Дети на соревновании"><img src="assets/09.webp" alt="Ученик с дипломом"></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="wrap footer-main"><div><img class="footer-logo" src="assets/10.webp" alt="CoolChess"><p>Шахматы, которые увлекают.<br>Навыки, которые остаются.</p></div><div><h3>Навигация</h3><a href="#programs">Программы</a><a href="#pricing">Стоимость</a><a href="#trainers">Тренеры</a><a href="#tournaments">Турниры</a></div><div><h3>Контакты</h3><a href="tel:+79185445984">+7 (918) 544-59-84</a><a href="https://wa.me/79185445984" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href="https://vk.com/coolchess_online_public" target="_blank" rel="noopener noreferrer">ВКонтакте ↗</a><a href="https://coolchess.s20.online/" target="_blank" rel="noopener noreferrer">Личный кабинет ↗</a></div><div><h3>Документы</h3><a href="docs/offer.pdf" target="_blank" rel="noopener noreferrer">Договор оферты</a><a href="docs/privacy.pdf" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a><a href="docs/consent.pdf" target="_blank" rel="noopener noreferrer">Согласие на обработку данных</a></div></div><div class="wrap footer-bottom"><span>© CoolChess · ИП Кулиев Э. В.</span><span>ИНН 236101066701 · Лицензия Л035-01218-23/04245470</span></div></footer>
+
+  <div class="modal" id="trial-modal" hidden><div class="modal-backdrop" data-close-modal></div><div class="modal-dialog trial-dialog" role="dialog" aria-modal="true" aria-labelledby="trial-title"><div class="modal-head"><h2 id="trial-title">Запись на пробный урок</h2><button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button></div><iframe title="Форма записи на пробный урок AlfaCRM" loading="lazy" data-src="https://coolchess.s20.online/common/1/form/draw?id=1&amp;baseColor=205EDC&amp;borderRadius=8&amp;css=%2F%2Fcdn.alfacrm.pro%2Flead-form%2Fform.css"></iframe></div></div>
+
+  <div class="modal" id="payment-modal" hidden><div class="modal-backdrop" data-close-modal></div><div class="modal-dialog payment-dialog" role="dialog" aria-modal="true" aria-labelledby="payment-title"><div class="modal-head"><div><span class="eyebrow">Безопасная оплата</span><h2 id="payment-title">Оплата занятий</h2></div><button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button></div><form id="payment-form" action="https://coolchess1.server.paykeeper.ru/create/" method="POST"><input type="hidden" name="service_name" id="pay-service"><input type="hidden" name="sum" id="pay-sum"><div class="payment-block"><span class="step-number">1</span><div><h3>Выберите количество занятий</h3><div class="payment-options" id="payment-options"></div></div></div><div class="payment-block"><span class="step-number">2</span><div><h3>Укажите ваши данные</h3><div class="field-grid"><label>ФИО<input name="clientid" autocomplete="name" required></label><label>Email<input name="client_email" type="email" autocomplete="email" required></label><label>Телефон<input name="client_phone" type="tel" autocomplete="tel" required></label></div><label class="check"><input type="checkbox" required> <span>Я согласен с <a href="docs/privacy.pdf" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a></span></label><label class="check"><input type="checkbox" required> <span>Я согласен с <a href="docs/video-policy.pdf" target="_blank" rel="noopener noreferrer">политикой использования видеоматериалов</a></span></label><label class="check"><input type="checkbox" required> <span>Я согласен с условиями <a href="docs/offer.pdf" target="_blank" rel="noopener noreferrer">договора оферты</a></span></label></div></div><div class="payment-bottom"><div><span>Выбрано</span><strong id="payment-summary">—</strong></div><button class="btn btn-purple" type="submit">Перейти к оплате ↗</button></div><p class="payment-note">Оплата на защищённой странице PayKeeper. Данные карты на этом сайте не вводятся.</p></form></div></div>
+
+  <div class="modal" id="quiz-modal" hidden><div class="modal-backdrop" data-close-modal></div><div class="modal-dialog quiz-dialog" role="dialog" aria-modal="true" aria-labelledby="quiz-title"><div class="modal-head"><div><span class="eyebrow">Подбор обучения</span><h2 id="quiz-title">Найдём вашу программу</h2></div><button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button></div><div id="quiz-content"></div></div></div>
+</body>
+</html>
