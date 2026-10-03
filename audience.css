@@ -1,0 +1,207 @@
+/* Main → Group 4 in Chess 2.fig */
+.audience.section {
+  padding-block: 0;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.audience-heading {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 959px) minmax(0, 361px);
+  height: 191px;
+}
+
+.audience-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 17px;
+  border-radius: 100px;
+  background: #eaff5f;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.audience-heading h2 {
+  margin: 12px 0 0;
+  color: #000;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.audience-heading h2 strong { font-weight: 800; }
+.audience-heading-main > p { margin: 9px 0 0; font-size: 16px; line-height: 1.2; }
+.audience-heading-aside { align-self: start; margin: 66px 0 0; font-size: 24px; font-weight: 700; line-height: 1.2; }
+
+.audience-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  gap: 20px;
+  height: 500px;
+  margin-top: -51px;
+}
+
+.audience-card {
+  position: relative;
+  isolation: isolate;
+  min-height: 0;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 32px;
+  background: #f5f5f5;
+}
+
+.audience-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -350px auto auto -337px;
+  width: 994px;
+  height: 1773px;
+  background: url('assets/12.webp') center / cover no-repeat;
+  opacity: .25;
+}
+
+.audience-first { height: 281px; }
+.audience-confident, .audience-adults { height: 357px; }
+.audience-tournament {
+  height: 500px;
+  background: linear-gradient(90deg, #62c0ff 31%, #c2e7ff 75%);
+}
+.audience-confident::before { top: -408px; }
+.audience-adults::before { top: -434px; }
+
+.audience-card > .audience-figure {
+  position: absolute;
+  z-index: 0;
+  max-width: none;
+  height: auto;
+  object-fit: initial;
+  filter: none;
+}
+.audience-first > .audience-figure { top: -25px; left: 114px; width: 230px; }
+.audience-confident > .audience-figure { top: -77px; left: -68px; width: 601px; transform: scaleX(-1); }
+.audience-tournament > .audience-figure { top: -252px; left: -63px; width: 696px; transform: scaleX(-1); }
+.audience-adults > .audience-figure { top: 0; left: -25%; width: 150%; transform: scaleX(-1); }
+
+.audience-tag {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 4px 12px 4px 4px;
+  border-radius: 100px;
+  background: #ffffffa6;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+.audience-tag > span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 32px;
+  border-radius: 100px;
+  background: #fff;
+  font-size: 20px;
+}
+
+.audience-card-copy {
+  position: absolute;
+  z-index: 2;
+  left: 32px;
+  bottom: 32px;
+  width: 201px;
+  padding: 0;
+  pointer-events: none;
+}
+.audience-card-copy h3 {
+  margin: 0 0 8px;
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.audience-card-copy p { margin: 0; color: #000; font-size: 14px; line-height: 1.4; }
+
+.audience-hit { position: absolute; z-index: 3; inset: 0; width: 100%; border: 0; background: transparent; }
+.audience-hit:focus-visible { outline: 3px solid #111; outline-offset: -6px; border-radius: 32px; }
+.audience-cta {
+  position: absolute;
+  z-index: 4;
+  top: 221px;
+  left: calc(75% - 85px);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  width: 115px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+}
+.audience-cta span { display: grid; place-items: center; width: 115px; height: 49px; border-radius: 100px; background: #eaff5f; }
+.audience-cta b { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #000; color: #fff; font-size: 25px; font-weight: 400; }
+.audience-cta:focus-visible { outline: 3px solid #111; outline-offset: 5px; border-radius: 16px; }
+
+@media (max-width: 1100px) {
+  .audience-heading { grid-template-columns: minmax(0, 1fr) 260px; }
+  .audience-heading h2 { font-size: clamp(36px, 4.4vw, 48px); }
+  .audience-heading-aside { font-size: 20px; }
+  .audience-grid { gap: 12px; }
+  .audience-card-copy { left: 20px; width: calc(100% - 40px); }
+  .audience-card-copy h3 { font-size: 21px; }
+  .audience-tag { left: 12px; transform: scale(.86); transform-origin: left top; }
+  .audience-cta { left: calc(75% - 79px); }
+}
+
+@media (max-width: 1000px) {
+  .audience.section { margin-top: 65px; margin-bottom: 65px; }
+  .audience-heading { display: block; height: auto; margin-bottom: 25px; }
+  .audience-heading h2 { font-size: clamp(32px, 8vw, 44px); line-height: 1.12; }
+  .audience-heading-main > p { max-width: 350px; margin-top: 14px; }
+  .audience-heading-aside { margin: 15px 0 0; font-size: 18px; }
+  .audience-grid { height: auto; margin-top: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: stretch; }
+  .audience-card, .audience-first, .audience-confident, .audience-tournament, .audience-adults { height: 340px; }
+  .audience-card > .audience-figure { width: auto; height: 310px; top: -20px; left: 25%; }
+  .audience-first > .audience-figure { height: 270px; top: -25px; left: 27%; }
+  .audience-confident > .audience-figure { height: 370px; top: -30px; left: -22%; }
+  .audience-tournament > .audience-figure { height: 500px; top: -100px; left: -35%; }
+  .audience-adults > .audience-figure { width: 150%; height: auto; top: 0; left: -25%; }
+  .audience-card-copy { left: 18px; bottom: 20px; width: calc(100% - 30px); }
+  .audience-card-copy h3 { font-size: 21px; }
+  .audience-card-copy p { font-size: 12px; }
+  .audience-cta { top: 205px; left: calc(50% + 7px); transform: scale(.8); transform-origin: left top; }
+}
+
+@media (max-width: 450px) {
+  .audience-grid { grid-template-columns: 1fr; }
+  .audience-card, .audience-first, .audience-confident, .audience-tournament, .audience-adults { height: 300px; }
+  .audience-card > .audience-figure { height: 330px; left: 38%; }
+  .audience-first > .audience-figure { height: 320px; left: 47%; }
+  .audience-confident > .audience-figure { height: 400px; left: 15%; }
+  .audience-tournament > .audience-figure { height: 590px; top: -160px; left: 2%; }
+  .audience-adults > .audience-figure { width: 150%; height: auto; left: -25%; }
+  .audience-card-copy { width: 210px; }
+  .audience-card-copy p { font-size: 13px; }
+  .audience-cta { top: 680px; left: auto; right: 5px; }
+}

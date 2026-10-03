@@ -8,57 +8,109 @@
   <title>CoolChess — шахматы, которые увлекают</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="refinements.css">
+  <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="audience.css">
   <script src="main.js" defer></script>
 </head>
 <body>
   <header class="hero" id="top">
     <div class="hero-sky" aria-hidden="true"></div>
-    <nav class="nav wrap" aria-label="Основная навигация">
-      <a class="brand" href="#top" aria-label="CoolChess — наверх"><img src="assets/10.webp" alt="CoolChess"></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Открыть меню"><span></span><span></span><span></span></button>
-      <div class="nav-links" id="nav-links">
-        <a href="#learning">Обучение</a><a href="#programs">Программы</a><a href="#trainers">Тренеры</a><a href="#tournaments">Турниры</a><a href="#results">Результаты</a><a href="#about">О школе</a>
-        <a class="login-link" href="https://coolchess.s20.online/" target="_blank" rel="noopener noreferrer">Войти ↗</a>
+    <div class="hero-stage" aria-hidden="true">
+      <img class="hero-piece hero-piece-blue" src="assets/15.webp" alt="">
+      <img class="hero-piece hero-piece-purple" src="assets/13.webp" alt="">
+      <img class="hero-piece hero-piece-lime" src="assets/14.webp" alt="">
+      <img class="hero-child" src="assets/18.webp" alt="">
+      <img class="hero-piece hero-piece-small" src="assets/17.webp" alt="">
+    </div>
+    <nav class="nav" aria-label="Основная навигация">
+      <div class="nav-main">
+        <a class="brand" href="#top" aria-label="CoolChess — наверх"><img src="assets/10.webp" alt="CoolChess"></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="nav-links">
+          <a href="#tournaments">Турниры <span aria-hidden="true">↗</span></a>
+          <a href="https://coolchess.s20.online/" target="_blank" rel="noopener noreferrer">Игровая платформа <span aria-hidden="true">↗</span></a>
+          <a class="mobile-nav-item" href="#about">О занятиях</a>
+          <a class="mobile-nav-item" href="#quiz">Подобрать обучение</a>
+          <a class="mobile-nav-item" href="#programs">Выбрать и записаться</a>
+          <a class="mobile-nav-item" href="#learning">Как учим</a>
+          <a class="mobile-nav-item" href="#trainers">Тренеры</a>
+          <a class="mobile-nav-item" href="#trial">Пробный урок</a>
+          <a class="mobile-nav-item" href="#license">Лицензия</a>
+          <a class="mobile-nav-item login-link" href="https://coolchess.s20.online/" target="_blank" rel="noopener noreferrer"><img src="assets/16.webp" alt="">Войти</a>
+          <button class="mobile-nav-item nav-signup" type="button" data-open-trial>Записаться</button>
+        </div>
+      </div>
+      <div class="nav-account">
+        <a class="login-link" href="https://coolchess.s20.online/" target="_blank" rel="noopener noreferrer"><img src="assets/16.webp" alt="">Войти</a>
+        <button class="nav-signup" type="button" data-open-trial>Записаться</button>
       </div>
     </nav>
-    <div class="hero-content wrap">
-      <div class="hero-copy">
-        <span class="eyebrow eyebrow-light">Онлайн-школа шахмат CoolChess</span>
-        <h1>Шахматы,<br>которые увлекают.<br><em>Навыки, которые остаются.</em></h1>
-        <div class="hero-actions"><button class="btn btn-lime" data-open-trial>Записаться на пробный урок <span>↗</span></button><a class="text-link light" href="#programs">Выбрать программу ↓</a></div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <img class="hero-child" src="assets/18.webp" alt="">
-        <img class="hero-king" src="assets/13.webp" alt="">
-        <img class="hero-pawn" src="assets/14.webp" alt="">
-        <img class="hero-knight" src="assets/15.webp" alt="">
-        <div class="hero-bubble bubble-two">Осенний турнир уже идёт 🍂♟<br><small>Успейте присоединиться к игре</small></div>
-      </div>
-      <div class="hero-orbit" aria-hidden="true">♞</div>
+    <h1 class="hero-title"><span>Шахматы,</span><span>которые увлекают.</span><span>Навыки, которые</span><span>остаются</span></h1>
+    <button class="hero-trial" type="button" data-open-trial>Записаться<br>на пробный<br>урок</button>
+    <div class="hero-video-card">
+      <video autoplay muted loop playsinline poster="assets/hero-trainer.webp" aria-label="Видео тренера CoolChess"><source src="assets/hero-trainer.mp4" type="video/mp4"></video>
     </div>
-    <div class="hero-bottom wrap"><span>Школа, в которую хочется возвращаться</span><span>Листайте вниз ↓</span></div>
+    <span class="hero-video-mark" aria-hidden="true">↗</span>
+    <div class="hero-tournament"><strong>Осенний турнир уже идет 🍂♟</strong><span>Успейте присоединиться<br>к игре</span></div>
+    <nav class="hero-tabs" aria-label="Разделы страницы">
+      <a class="active" href="#about">О занятиях</a>
+      <a href="#quiz">Подобрать обучение</a>
+      <a href="#programs">Выбрать и записаться</a>
+      <a href="#learning">Как учим</a>
+      <a href="#trainers">Тренеры</a>
+      <a href="#trial">Пробный урок</a>
+      <a href="#license">Лицензия</a>
+    </nav>
   </header>
 
   <main>
     <section class="intro wrap" id="about" aria-label="О школе">
       <div class="intro-top">
         <div class="intro-copy"><h2>Персональные занятия с&nbsp;профессиональным тренером</h2><button class="btn btn-dark" data-open-trial>Записаться на пробный урок ↗</button><p>Первый урок — 500 ₽. Без обязательств по покупке абонемента.</p></div>
-        <div class="intro-count"><strong>200+</strong><span>счастливых учеников</span></div>
+        <div class="intro-count"><div class="intro-count-copy"><strong>200+</strong><span>счастливых учеников</span></div><div class="intro-avatars" aria-hidden="true"><span><img src="assets/51.webp" alt=""></span><span><img src="assets/52.webp" alt=""></span><span><img src="assets/53.webp" alt=""></span><span class="intro-avatars-more">+</span></div></div>
       </div>
       <div class="benefits-grid">
-        <article class="benefit-photo"><img src="assets/19.webp" alt="Шахматистка CoolChess"><div><span>01/</span><h3>Индивидуальная программа</h3><span>02/</span><h3>Онлайн из любой точки</h3></div></article>
-        <article class="benefit-card"><span class="benefit-symbol">♟</span><h3>Лиги для любого уровня</h3><p>Ребёнок растёт в своём темпе и находит достойных соперников.</p></article>
-        <article class="benefit-card benefit-license"><span class="eyebrow">Школе можно доверять</span><h3>Лицензированная школа</h3><p>Лицензия Л035-01218-23/04245470</p><a href="docs/license.pdf" target="_blank" rel="noopener noreferrer">Посмотреть лицензию ↗</a></article>
+        <article class="benefit-photo"><div class="benefit-photo-window"><img src="assets/47.webp" alt="Большая розовая шахматная фигура на городской улице"></div><div class="benefit-photo-lines"><div><span>01/</span><h3>Индивидуальная программа</h3></div><div><span>02/</span><h3>Онлайн из любой точки</h3></div></div></article>
+        <article class="benefit-leagues"><div class="benefit-heading"><h3>Лиги для любого уровня</h3><a href="#programs" aria-label="Посмотреть программы и лиги">↗</a></div><div class="benefit-poster"><img src="assets/50.webp" alt="Постер шахматной серии CoolChess"><span>лиги для любого уровня</span></div></article>
+        <article class="benefit-license"><h3>Лицензированная<br>школа</h3><div class="benefit-license-panel"><span class="benefit-trust">школе можно доверять</span><div><strong>Лицензия</strong><span>Л035-01218-23/04245470</span></div><span class="benefit-ministry">Министерство<br>просвещения РФ</span><a href="docs/license.pdf" target="_blank" rel="noopener noreferrer" aria-label="Посмотреть лицензию">↗</a></div></article>
       </div>
     </section>
 
-    <section class="section wrap audience" id="programs">
-      <div class="section-heading"><div><span class="eyebrow">Для каждого уровня</span><h2>Программа, которая<br><em>подходит вам</em></h2></div><p>Подберём занятия под возраст, уровень и цель ученика. Неважно, с чего вы начинаете.</p></div>
+    <section class="section wrap audience" id="programs" aria-labelledby="audience-title">
+      <div class="audience-heading">
+        <div class="audience-heading-main">
+          <span class="audience-eyebrow">для каждого уровня</span>
+          <h2 id="audience-title">Программа, которая<br><strong>подходит вам</strong></h2>
+          <p>Подберём программу под возраст, уровень и цель ученика</p>
+        </div>
+        <p class="audience-heading-aside">Неважно,<br>с чего вы начинаете</p>
+      </div>
       <div class="audience-grid">
-        <article class="audience-card audience-lilac"><span class="audience-age">4–7 лет</span><img src="assets/17.webp" alt="Фиолетовая шахматная фигура"><div><span class="audience-icon">♟</span><h3>Первый шаг</h3><p>Познакомиться с шахматами через игру</p></div><button data-open-trial aria-label="Записаться на занятия для детей 4–7 лет">↗</button></article>
-        <article class="audience-card audience-blue"><span class="audience-age">7–12 лет</span><img src="assets/15.webp" alt="Синяя шахматная фигура"><div><span class="audience-icon">♞</span><h3>Уверенный игрок</h3><p>Систематизировать знания и научиться играть сильнее</p></div><button data-open-trial aria-label="Записаться на занятия для детей 7–12 лет">↗</button></article>
-        <article class="audience-card audience-pink"><span class="audience-age">Для детей с опытом</span><img src="assets/22.webp" alt="Розовая шахматная композиция"><div><span class="audience-icon">🏆</span><h3>Турнирный уровень</h3><p>Подготовка к соревнованиям и рост рейтинга</p></div><button data-open-trial aria-label="Записаться на турнирную подготовку">↗</button></article>
-        <article class="audience-card audience-lime"><span class="audience-age">18+ лет</span><img src="assets/20.webp" alt="Взрослый ученик"><div><span class="audience-icon">✦</span><h3>Взрослые</h3><p>Для себя, семьи или возвращения в шахматы</p></div><button data-open-trial aria-label="Записаться на занятия для взрослых">↗</button></article>
+        <article class="audience-card audience-first">
+          <img class="audience-figure" src="assets/24.webp" alt="Ребёнок с большой синей шахматной фигурой">
+          <span class="audience-tag"><span aria-hidden="true">🌱</span> Первый шаг</span>
+          <div class="audience-card-copy"><h3>4–7 лет</h3><p>Познакомиться<br>с шахматами<br>через игру</p></div>
+          <button class="audience-hit" type="button" data-open-trial aria-label="Записаться на занятия для детей 4–7 лет"></button>
+        </article>
+        <article class="audience-card audience-confident">
+          <img class="audience-figure" src="assets/25.webp" alt="Девочка среди шахматных фигур">
+          <span class="audience-tag"><span aria-hidden="true">♟</span> Уверенный игрок</span>
+          <div class="audience-card-copy"><h3>7–12 лет</h3><p>Систематизировать<br>знания и научиться<br>играть сильнее</p></div>
+          <button class="audience-hit" type="button" data-open-trial aria-label="Записаться на занятия для детей 7–12 лет"></button>
+        </article>
+        <article class="audience-card audience-tournament">
+          <img class="audience-figure" src="assets/26.webp" alt="Девочка с большой жёлтой шахматной фигурой">
+          <span class="audience-tag"><span aria-hidden="true">🏆</span> Турнирный уровень</span>
+          <div class="audience-card-copy"><h3>Для детей<br>с опытом</h3><p>Подготовка к соревнованиям<br>и рост рейтинга</p></div>
+          <button class="audience-hit" type="button" data-open-trial aria-label="Записаться на турнирную подготовку"></button>
+        </article>
+        <article class="audience-card audience-adults">
+          <img class="audience-figure" src="assets/27.webp" alt="Взрослая ученица с зелёной шахматной фигурой">
+          <span class="audience-tag"><span aria-hidden="true">🕺</span> Взрослые</span>
+          <div class="audience-card-copy"><h3>18+ лет</h3><p>Для себя, семьи<br>или возвращения<br>в шахматы</p></div>
+          <button class="audience-hit" type="button" data-open-trial aria-label="Записаться на занятия для взрослых"></button>
+        </article>
+        <button class="audience-cta" type="button" data-open-trial><span>Записаться</span><b aria-hidden="true">↗</b></button>
       </div>
     </section>
 
@@ -80,9 +132,9 @@
 
     <section class="section wrap trainers" id="trainers"><div class="section-heading"><div><span class="eyebrow">Наша команда</span><h2>Ваш тренер —<br><em>не случайный преподаватель</em></h2></div><p>Каждый тренер проходит отбор и работает с определёнными уровнями и задачами.</p></div><div class="trainer-grid"><article><img src="assets/43.webp" alt="Эльмар Валерьевич"><span>Основатель школы · 15 лет опыта</span><h3>Эльмар Валерьевич</h3><p>Кандидат технических наук, кандидат в мастера спорта</p></article><article><img src="assets/44.webp" alt="Алина Геннадьевна"><span>5 лет опыта</span><h3>Алина Геннадьевна</h3><p>1 разряд. Участница Всероссийских и Международных турниров</p></article><article><img src="assets/45.webp" alt="Карен Владимирович"><span>15 лет опыта</span><h3>Карен Владимирович</h3><p>Кандидат в мастера спорта. Призёр Ростовской области и ЮФО</p></article><article><img src="assets/46.webp" alt="Кирилл Вячеславович"><span>15 лет опыта</span><h3>Кирилл Вячеславович</h3><p>Кандидат в мастера спорта. Чемпион Ростова-на-Дону и Ростовской области</p></article></div></section>
 
-    <section class="trial-section wrap"><div><div class="trial-features"><span>⚖ Определение уровня</span><span>💬 Обратная связь</span><span>♟ Рекомендации тренера</span></div><h2>Попробуйте.<br>Познакомьтесь.<br><em>Решите.</em></h2><p>Первый урок поможет познакомиться с тренером и выбрать дальнейшую программу. 500 ₽, без обязательств.</p><button class="btn btn-lime" data-open-trial>Записаться на пробный урок ↗</button></div><img src="assets/24.webp" alt="Ребёнок с шахматной фигурой"></section>
+    <section class="trial-section wrap" id="trial"><div><div class="trial-features"><span>⚖ Определение уровня</span><span>💬 Обратная связь</span><span>♟ Рекомендации тренера</span></div><h2>Попробуйте.<br>Познакомьтесь.<br><em>Решите.</em></h2><p>Первый урок поможет познакомиться с тренером и выбрать дальнейшую программу. 500 ₽, без обязательств.</p><button class="btn btn-lime" data-open-trial>Записаться на пробный урок ↗</button></div><img src="assets/24.webp" alt="Ребёнок с шахматной фигурой"></section>
 
-    <section class="section wrap license"><div><span class="eyebrow">Государственная лицензия</span><h2>Обучение<br><em>со статусом</em></h2><p>Официальная лицензия позволяет получить налоговый вычет и гарантирует соответствие образовательным стандартам.</p><a class="text-link" href="docs/license.pdf" target="_blank" rel="noopener noreferrer">Открыть лицензию ↗</a><div class="license-support"><strong>Государственная поддержка</strong><span>Обучение можно оплатить средствами материнского капитала</span></div></div><div class="license-card"><span>Школе можно доверять</span><h3>Лицензия<br>Л035-01218-23/04245470</h3><p>Министерство просвещения РФ</p><div><strong>13%</strong><span>налоговый вычет<br>от стоимости обучения</span></div></div></section>
+    <section class="section wrap license" id="license"><div><span class="eyebrow">Государственная лицензия</span><h2>Обучение<br><em>со статусом</em></h2><p>Официальная лицензия позволяет получить налоговый вычет и гарантирует соответствие образовательным стандартам.</p><a class="text-link" href="docs/license.pdf" target="_blank" rel="noopener noreferrer">Открыть лицензию ↗</a><div class="license-support"><strong>Государственная поддержка</strong><span>Обучение можно оплатить средствами материнского капитала</span></div></div><div class="license-card"><span>Школе можно доверять</span><h3>Лицензия<br>Л035-01218-23/04245470</h3><p>Министерство просвещения РФ</p><div><strong>13%</strong><span>налоговый вычет<br>от стоимости обучения</span></div></div></section>
 
     <section class="kids" id="tournaments"><div class="wrap"><div class="section-heading"><div><span class="eyebrow">Дети CoolChess</span><h2>Яркие моменты<br><em>счастливого детства</em></h2></div><div class="kids-intro"><p>Сейчас наши дети играют в осеннем турнире 🍂 Следим за партиями, поддерживаем друг друга и набираемся турнирного опыта.</p><button class="btn btn-dark" data-open-trial>Записаться на пробный урок ↗</button></div></div><div class="kids-gallery"><img src="assets/02.webp" alt="Победа юного шахматиста"><img src="assets/03.webp" alt="Участница турнира"><img src="assets/06.webp" alt="Юная ученица с наградой"><img src="assets/07.webp" alt="Награды с турнира"><img src="assets/08.webp" alt="Дети на соревновании"><img src="assets/09.webp" alt="Ученик с дипломом"></div></div></section>
 
