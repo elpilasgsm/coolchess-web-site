@@ -1,0 +1,68 @@
+/* Main → Frame 12343202 → Frame 12343203 → дети in Chess 2.fig.
+   The 1440 × 1008 stage stops before the footer inside the Figma frame. */
+.kids { position: relative; isolation: isolate; padding: 0; overflow: hidden; background: linear-gradient(180deg, #62c0ff 17.813972%, #c2e7ff 50.120676%, #68c2ff 78.550571%); color: #000; }
+.kids-decoration { position: absolute; z-index: -1; top: 0; left: 50%; width: min(1440px, 100%); height: 100%; transform: translateX(-50%); pointer-events: none; }
+.kids-decoration img { position: absolute; max-width: none; }
+.kids-clouds { left: -16.666667%; top: -175.198413%; width: 133.333333%; height: 339.880952%; opacity: .25; mix-blend-mode: lighten; }
+.kids-pieces { left: -.972222%; top: -.694444%; width: 101.875%; height: 130.257937%; object-fit: fill; }
+.kids-stage { position: relative; width: min(1440px, 100%); aspect-ratio: 1440 / 1008; margin-inline: auto; }
+.kids-collage { position: absolute; left: 14.097222%; top: 11.904762%; width: 77.291667%; height: 76.190476%; }
+.kids-collage h2 { position: absolute; left: 28.032345%; top: 37.369792%; width: 36.747529%; margin: 0; color: #fff; font-family: 'TT Firs Neue Variable', 'Segoe UI', Arial, sans-serif; font-size: min(72px, 5vw); font-weight: 800; line-height: 1.2; letter-spacing: 0; text-align: center; }
+.kids-badge { position: absolute; z-index: 1; left: 57.771788%; top: 28.125%; width: 18.778077%; margin: 0; padding: min(16px, 1.111111vw) min(20px, 1.388889vw); border: 2px solid #fff; border-radius: 12px; background: #eafe5f; font-family: Inter, Arial, sans-serif; font-size: min(16px, 1.111111vw); font-weight: 400; line-height: 1.2; }
+.kids-logo { position: absolute; z-index: 1; left: 24.348607%; top: 18.563461%; width: 29.363583%; height: 14.80148%; object-fit: contain; transform: rotate(-6.7773deg); transform-origin: top left; filter: drop-shadow(3.95px 3.95px 3.95px #0004); }
+.kids-photo { position: absolute; margin: 0; overflow: hidden; border-radius: min(20px, 1.388889vw); background: #f5f5f5; }
+.kids-photo img { width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.kids-photo::after { content: ''; position: absolute; inset: 0; border: min(4px, .277778vw) solid var(--photo-border, transparent); border-radius: inherit; pointer-events: none; }
+.kids-photo-team { left: 68.912848%; top: 0; width: 27.042314%; height: 37.239583%; }
+.kids-photo-team img { position: absolute; left: -22.398192%; top: -14.285714%; width: 144.796377%; height: 114.285714%; object-fit: fill; }
+.kids-photo-diploma { left: 18.598383%; top: 77.864583%; width: 10.569631%; height: 22.135417%; --photo-border: #eafe5f; }
+.kids-photo-winner { left: 66.936208%; top: 46.354167%; width: 24.438455%; height: 47.135417%; --photo-border: #fff; }
+.kids-photo-cup { left: 88.679245%; top: 28.776042%; width: 11.320755%; height: 21.875%; }
+.kids-photo-cup::after, .kids-photo-friends::after { border: 0; padding: min(4px, .277778vw); background: linear-gradient(180deg, #b8afff, #eafe5f); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; }
+.kids-photo-award { left: 59.568733%; top: 69.010417%; width: 10.512129%; height: 19.401042%; }
+.kids-photo-award img { position: absolute; left: -16.571959%; top: 0; width: 116.666665%; height: 122.147651%; object-fit: fill; }
+.kids-photo-boy { left: 4.58221%; top: 31.510417%; width: 19.766397%; height: 36.067708%; border-radius: min(41px, 2.847222vw); }
+.kids-photo-boy img { position: absolute; left: -3.863634%; top: -20.57899%; width: 128.181811%; height: 135.739808%; object-fit: fill; }
+.kids-photo-friends { left: 22.821204%; top: 8.723958%; width: 9.16442%; height: 17.578125%; }
+.kids-photo-girl { left: 0; top: 15.364583%; width: 11.500449%; height: 21.875%; --photo-border: #eafe5f; }
+.kids-tournament { position: absolute; z-index: 1; left: 25.277778%; top: 60.119048%; width: 27.152778%; padding-bottom: min(13px, .902778vw); font-family: Inter, Arial, sans-serif; font-size: min(14px, .972222vw); line-height: 1.2; }
+.kids-tournament-copy { width: 97.953964%; padding: min(16px, 1.111111vw) min(20px, 1.388889vw); border: 2px solid #fff; border-radius: 12px; background: #eafe5f; }
+.kids-tournament p { margin: 0; line-height: 1.2; }
+.kids-tournament p + p { margin-top: min(4px, .277778vw); }
+.kids-tournament strong { font-weight: 700; }
+.kids-tournament-action { position: absolute; right: 0; bottom: 0; display: grid; place-items: center; width: min(48px, 3.333333vw); height: min(48px, 3.333333vw); padding: 0; border: 0; border-radius: 50%; background: #000; color: #fff; transition: background .2s, transform .2s; }
+.kids-tournament-action:hover { background: #464bff; transform: translateY(-2px); }
+.kids-tournament-action:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.kids-tournament-action svg { width: 50%; height: 50%; }
+@media (max-width: 900px) and (min-width: 701px) {
+  .kids-stage { aspect-ratio: auto; padding: 48px 24px 56px; }
+  .kids-collage { position: relative; top: auto; left: auto; width: 100%; height: auto; aspect-ratio: 1113 / 768; }
+  .kids-collage h2 { font-size: 5.8vw; }
+  .kids-badge { width: auto; left: 55%; font-size: 12px; padding: 10px 12px; }
+  .kids-tournament { position: relative; top: auto; left: auto; width: 391px; margin: 24px auto 0; padding-bottom: 13px; font-size: 14px; }
+  .kids-tournament-copy { padding: 16px 20px; }
+  .kids-tournament p + p { margin-top: 4px; }
+  .kids-tournament-action { width: 48px; height: 48px; }
+}
+@media (max-width: 700px) {
+  .kids-stage { aspect-ratio: auto; padding: 40px 20px 48px; }
+  .kids-collage { position: relative; top: auto; left: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 16px; width: 100%; height: auto; max-width: 480px; margin-inline: auto; }
+  .kids-badge { position: relative; top: auto; left: auto; grid-column: 1 / -1; justify-self: center; width: auto; padding: 14px 20px; font-size: 16px; text-align: center; }
+  .kids-logo { position: relative; top: auto; left: auto; grid-column: 1 / -1; justify-self: center; width: 220px; height: auto; margin-top: 12px; transform-origin: center; }
+  .kids-collage h2 { position: relative; top: auto; left: auto; grid-column: 1 / -1; width: 100%; margin: 12px 0 16px; font-size: clamp(42px, 10vw, 64px); }
+  .kids-photo { position: relative; top: auto; left: auto; width: 100%; height: auto; aspect-ratio: 3 / 4; border-radius: 20px; }
+  .kids-photo::after { border-width: 4px; }
+  .kids-photo-cup::after, .kids-photo-friends::after { padding: 4px; }
+  .kids-photo-team { aspect-ratio: 300.980957 / 286; }
+  .kids-photo-boy { aspect-ratio: 220 / 277; border-radius: 30px; }
+  .kids-photo-award { aspect-ratio: 117 / 149; }
+  .kids-photo:nth-of-type(even) { transform: rotate(2deg); }
+  .kids-photo:nth-of-type(odd) { transform: rotate(-2deg); }
+  .kids-tournament { position: relative; top: auto; left: auto; width: min(391px, 100%); margin: 32px auto 0; padding-bottom: 20px; font-size: 14px; }
+  .kids-tournament-copy { width: 100%; padding: 18px 20px 30px; }
+  .kids-tournament p + p { margin-top: 8px; line-height: 1.4; }
+  .kids-tournament br { display: none; }
+  .kids-tournament-action { width: 48px; height: 48px; right: 8px; }
+  .kids-decoration .kids-clouds { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .kids-decoration .kids-pieces { left: -30%; top: 8%; width: 160%; height: auto; }
+}

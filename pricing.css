@@ -1,0 +1,79 @@
+/* Main → Frame 123, with the duration variants from Chess 2.fig. */
+.pricing { padding-block: 80px; color: #000; }
+.pricing > .section-heading { margin-bottom: 40px; }
+.pricing > .section-heading h2 { font-weight: 500; }
+.pricing-panel { display: grid; grid-template-columns: minmax(0, 392fr) minmax(0, 878fr); gap: 50px; padding: 0; background: transparent; border-radius: 0; }
+.pricing-profile { display: flex; flex-direction: column; gap: 32px; height: 600px; padding: 32px; border-radius: 32px; background: #f5f5f5; overflow: hidden; }
+.pricing-age { display: inline-flex; align-items: center; min-height: 32px; padding: 8px 17px; border-radius: 100px; background: #eafe5f; font-size: 14px; font-weight: 500; line-height: 1; }
+.pricing-profile h3 { margin: 12px 0; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -.03em; }
+.pricing-profile p { margin: 0; font-size: 16px; line-height: 1.2; }
+.pricing-image-window { flex: 1; min-height: 0; overflow: hidden; border-radius: 20px; }
+.pricing-image-window img { width: 100%; height: 410px; object-fit: cover; object-position: center top; }
+.pricing-profile[data-tier="45"] .pricing-image-window img { width: 294%; max-width: none; height: auto; margin-left: -89%; }
+.pricing-profile[data-tier="60"] .pricing-image-window img { width: 123%; max-width: none; height: auto; margin-left: -11.5%; }
+.pricing-content { min-width: 0; padding-top: 32px; }
+.pricing .duration-chooser { display: block; }
+.pricing .duration-chooser > h3 { margin: 0; font-size: 48px; line-height: 1; font-weight: 500; letter-spacing: -.045em; }
+.pricing .segments { width: max-content; max-width: 100%; padding: 0; gap: 8px; background: transparent; border-radius: 0; margin-top: 40px; }
+.pricing .segments button { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 4px 12px 4px 4px; border-radius: 100px; background: #f5f5f5; color: #000; font-size: 14px; font-weight: 500; }
+.pricing .segments button > span { display: grid; place-items: center; width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; background: #fff; font-size: 20px; }
+.pricing .segments button.active { background: #a79df3; }
+.pricing .price-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; margin-top: 40px; }
+.pricing .price-card { position: relative; height: 132px; min-height: 132px; padding: 20px 24px; border: 0; border-radius: 20px; background: #f5f5f5; color: #000; transform: none; }
+.pricing .price-card:hover { background: #e9e6fc; transform: none; }
+.pricing .price-card .count { align-self: flex-start; padding: 8px 9px; border-radius: 100px; background: #fff; font-size: 14px; line-height: 1; color: #000; white-space: nowrap; }
+.pricing .price-card strong { display: block; font-size: 20px; font-weight: 700; line-height: 1.2; letter-spacing: -.03em; }
+.pricing .price-card small { display: block; margin-top: 3px; font-size: 14px; line-height: 1.5; color: #000; white-space: nowrap; }
+.price-card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
+.price-card-arrow { display: grid; place-items: center; width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; background: #000; color: #fff; font-size: 21px; opacity: 0; transition: opacity .15s; }
+.pricing .price-card:not(.price-card-trial) .price-card-arrow { position: absolute; top: 16px; right: 12px; }
+.pricing .price-card:hover .price-card-arrow, .pricing .price-card:focus-visible .price-card-arrow { opacity: 1; }
+.pricing .price-card-trial { background: #a79df3; }
+.pricing .price-card-trial:hover { background: #978ae9; }
+.pricing .price-card-trial strong { color: #fff; }
+.price-card-trial .price-card-arrow { width: 48px; height: 48px; background: #fff; color: #000; opacity: 1; }
+.pricing .pricing-footer { display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 16px; margin-top: 40px; }
+.pricing-payment { border: 0; border-radius: 100px; min-height: 36px; padding: 8px 16px; background: #000; color: #fff; font-size: 14px; }
+.pricing .pricing-footer > a { font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+.pricing button:focus-visible, .pricing a:focus-visible { outline: 3px solid #655df4; outline-offset: 3px; }
+@media (max-width: 1250px) {
+  .pricing-panel { gap: 30px; grid-template-columns: minmax(0, 340fr) minmax(0, 760fr); }
+  .pricing-profile { padding: 24px; }
+  .pricing .price-card { padding: 20px 16px; }
+  .pricing .price-card small { font-size: 12px; }
+  .pricing .price-card:not(.price-card-trial) .price-card-arrow { position: absolute; top: 16px; right: 12px; width: 25px; height: 25px; }
+}
+@media (max-width: 1000px) {
+  .pricing-panel { grid-template-columns: minmax(0, 280px) minmax(0, 1fr); gap: 24px; }
+  .pricing-profile { height: 600px; padding: 20px; }
+  .pricing .duration-chooser > h3 { font-size: 36px; }
+  .pricing .price-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 28px; }
+  .pricing .segments { gap: 5px; margin-top: 28px; }
+  .pricing .segments button { gap: 5px; padding-right: 8px; font-size: 12px; }
+  .pricing .pricing-footer { margin-top: 28px; flex-wrap: wrap; }
+}
+@media (max-width: 700px) {
+  .pricing { padding-block: 64px; }
+  .pricing > .section-heading { margin-bottom: 28px; }
+  .pricing-panel { display: flex; flex-direction: column; gap: 28px; }
+  .pricing-profile { height: auto; padding: 24px; gap: 24px; border-radius: 24px; }
+  .pricing-profile h3 { max-width: 300px; }
+  .pricing-profile p { max-width: 340px; }
+  .pricing-image-window { flex: auto; height: 260px; }
+  .pricing-image-window img { height: auto; min-height: 100%; }
+  .pricing-content { padding-top: 0; }
+  .pricing .duration-chooser > h3 { font-size: clamp(30px, 8vw, 40px); }
+  .pricing .segments { width: 100%; margin-top: 24px; gap: 6px; }
+  .pricing .segments button { flex: 1; justify-content: center; min-width: 0; gap: 5px; padding: 4px 6px; font-size: 13px; }
+  .pricing .segments button > span { width: 28px; height: 28px; font-size: 18px; }
+  .pricing .price-grid { margin-top: 24px; gap: 6px; }
+  .pricing .price-card { height: 138px; min-height: 138px; padding: 16px 12px; border-radius: 16px; }
+  .pricing .price-card .count { font-size: 12px; padding: 8px; }
+  .pricing .price-card strong { font-size: 20px; }
+  .pricing .price-card small { font-size: 11px; white-space: normal; line-height: 1.3; }
+  .price-card-trial .price-card-arrow { width: 36px; height: 36px; }
+  .pricing .pricing-footer { margin-top: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pricing .price-card, .price-card-arrow { transition: none; }
+}

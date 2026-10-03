@@ -1,7 +1,7 @@
 const prices = {
-  25: { title: 'Идеально для самых маленьких', description: 'Детям с 4 до 7 лет', items: [[1,1200],[4,3800],[8,7120],[16,13280],[24,18960]] },
-  45: { title: 'Для детей постарше', description: 'Достаточно времени, чтобы увлечься и не устать', items: [[1,1650],[4,5600],[8,10800],[16,20800],[24,28800]] },
-  60: { title: 'Для будущих чемпионов', description: 'Для тех, кто хочет участвовать в соревнованиях и побеждать', items: [[1,2100],[4,7200],[8,14000],[16,26080],[24,37200]] }
+  25: { title: 'Идеально для самых маленьких', description: 'Подберём программу под возраст, уровень и цель ученика', age: 'Детям с 4 до 6 лет', image: 'assets/30.webp', imageAlt: 'Ребёнок рядом с большой шахматной фигурой', items: [[1,1200],[4,3800],[8,7120],[16,13280],[24,18960]] },
+  45: { title: 'Для детей постарше', description: 'Идеальное занятие, чтобы ребёнок не успел утомиться и был полностью вовлечён в процесс обучения', age: 'Детям с 7 до 12 лет', image: 'assets/pricing-45.webp', imageAlt: 'Шахматная композиция для детей постарше', items: [[1,1650],[4,5600],[8,10800],[16,20800],[24,28800]] },
+  60: { title: 'Для будущих чемпионов', description: 'Занятия для тех, кто хочет участвовать в соревнованиях и побеждать', age: 'С 14 лет', image: 'assets/pricing-60.webp', imageAlt: 'Шахматные фигуры на руке', items: [[1,2100],[4,7200],[8,14000],[16,26080],[24,37200]] }
 };
 
 const formatPrice = value => new Intl.NumberFormat('ru-RU').format(value) + ' ₽';
@@ -15,17 +15,26 @@ function renderPrices() {
   const tier = prices[duration];
   document.querySelector('#price-title').textContent = tier.title;
   document.querySelector('#price-description').textContent = tier.description;
+  document.querySelector('#price-age').textContent = tier.age;
+  const image = document.querySelector('#price-image');
+  image.src = tier.image;
+  image.alt = tier.imageAlt;
+  document.querySelector('.pricing-profile').dataset.tier = duration;
   document.querySelectorAll('[data-duration]').forEach(button => {
     const active = Number(button.dataset.duration) === duration;
     button.classList.toggle('active', active);
     button.setAttribute('aria-pressed', String(active));
   });
-  document.querySelector('#price-grid').innerHTML = tier.items.map(([count, sum]) => `
-    <button class="price-card" type="button" data-price-count="${count}" aria-label="${count} ${lessonWord(count)}, ${formatPrice(sum)}. Перейти к оплате">
+  document.querySelector('#price-grid').innerHTML = `
+    <button class="price-card price-card-trial" type="button" aria-label="Пробное занятие, 500 рублей. Записаться">
+      <span class="count">Пробное занятие</span>
+      <span class="price-card-bottom"><strong>500 ₽</strong><span class="price-card-arrow" aria-hidden="true">↗</span></span>
+    </button>` + tier.items.map(([count, sum]) => `
+    <button class="price-card" type="button" data-price-count="${count}" aria-label="${count} ${lessonWord(count)}, ${formatPrice(sum)}, ${duration} минут. Перейти к оплате">
       <span class="count">${count} ${lessonWord(count)}</span>
-      <strong>${formatPrice(sum)}</strong>
-      <small>${formatPrice(Math.round(sum/count))} за занятие</small>
+      <span class="price-card-bottom"><span><strong>${formatPrice(sum)}</strong>${count > 1 ? `<small>Стоимость 1 занятия ${formatPrice(Math.round(sum/count))}</small>` : ''}</span><span class="price-card-arrow" aria-hidden="true">↗</span></span>
     </button>`).join('');
+  document.querySelector('.price-card-trial').addEventListener('click', openTrial);
   document.querySelectorAll('[data-price-count]').forEach(button => button.addEventListener('click', () => openPayment(Number(button.dataset.priceCount))));
 }
 
@@ -100,6 +109,23 @@ document.querySelectorAll('#nav-links a').forEach(link => link.addEventListener(
   menuToggle.setAttribute('aria-expanded', 'false');
   document.querySelector('#nav-links').classList.remove('open');
 }));
+
+const trainersDialog = document.querySelector('#trainers-dialog');
+const trainersDialogGrid = trainersDialog.querySelector('.trainers-dialog-grid');
+document.querySelectorAll('#trainers > .trainer-grid > .trainer-card').forEach(card => {
+  const profile = card.cloneNode(true);
+  profile.querySelector('.trainer-signup')?.remove();
+  trainersDialogGrid.append(profile);
+});
+document.querySelector('.trainers-all').addEventListener('click', () => {
+  trainersDialog.showModal();
+  document.body.classList.add('modal-open');
+});
+trainersDialog.addEventListener('close', () => document.body.classList.remove('modal-open'));
+trainersDialog.addEventListener('click', event => {
+  const bounds = trainersDialog.getBoundingClientRect();
+  if (event.target === trainersDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) trainersDialog.close();
+});
 
 const quizQuestions = [
   { question: 'Кто будет заниматься?', options: ['ребёнок 4–6 лет', 'ребёнок 7–12 лет', 'подросток', 'взрослый 18+'] },

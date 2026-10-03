@@ -1,0 +1,55 @@
+/* Main → Frame 12343202 → Group 17 → Frame 104 in Chess 2.fig.
+   The heading order follows the user's brief and the original Main copy. */
+.trial-section { position: relative; isolation: isolate; display: block; width: min(1440px, 100%); height: min(740px, 51.388889vw); min-height: 0; margin: 0 auto 80px; padding: 0; overflow: hidden; border-radius: 60px; background: radial-gradient(ellipse 100% 85% at 25% 46%, #dbf1ff 0%, #75c8ff 100%); color: #000; }
+.trial-section > .trial-decoration { position: absolute; z-index: -1; inset: 0; pointer-events: none; }
+.trial-decoration img { position: absolute; max-width: none; object-fit: fill; }
+.trial-clouds { left: -16.666667%; top: -253.783784%; width: 133.333333%; height: 462.972973%; opacity: .25; mix-blend-mode: lighten; }
+.trial-knight { left: 24.375%; top: 18.023516%; width: 64.123425%; height: 155.975903%; transform: matrix(.975687, -.219167, .219167, .975687, 0, 0); transform-origin: top left; }
+.trial-pawn { left: 96.280111%; top: 62.919394%; width: 32.402424%; height: 78.81671%; transform: matrix(.643307, -.765608, -.765608, -.643307, 0, 0); transform-origin: top left; }
+.trial-section > .trial-copy { position: absolute; top: 18.108108%; left: 6.944444%; width: 44.722222%; }
+.trial-section h2 { margin: 0; font-family: 'TT Firs Neue Variable', 'Segoe UI', Arial, sans-serif; font-size: clamp(46px, 4.444444vw, 64px); font-weight: 500; line-height: 1.2; letter-spacing: 0; }
+.trial-section .trial-description { max-width: 517px; margin: 20px 0 0; font-family: Inter, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 1.4; }
+.trial-action { margin-top: 48px; }
+.trial-signup { display: grid; place-items: center; width: 340px; max-width: 100%; height: 48px; padding: 0 16px; border: 0; border-radius: 12px; background: #464bff; color: #fff; font-family: 'TT Firs Neue Variable', 'Segoe UI', Arial, sans-serif; font-size: 18px; font-weight: 500; line-height: 1.2; transition: background .2s; }
+.trial-signup:hover { background: #3338de; }
+.trial-signup:focus-visible { outline: 3px solid #000; outline-offset: 4px; }
+.trial-section .trial-note { max-width: 100%; margin: 24px 0 0; font-family: Inter, Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 1.3; }
+.trial-section > .trial-visual { position: absolute; top: 15.135135%; left: 60.694444%; width: 27.430556%; }
+.trial-window { position: relative; width: 95.189873%; aspect-ratio: 376 / 361; margin-inline: auto; overflow: hidden; }
+.trial-window img { position: absolute; left: -75.663717%; top: -73.441109%; width: 251.327427%; height: 262.355627%; max-width: none; object-fit: fill; }
+.trial-section .trial-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: none; margin: 48px 0 0; padding: 0; list-style: none; }
+.trial-features li { display: flex; align-items: center; gap: 10px; height: 48px; padding: 4px 12px 4px 4px; border-radius: 100px; background: #eafe5f; font-family: 'TT Firs Neue Variable', 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 500; line-height: 1; white-space: nowrap; box-shadow: inset 0 1px 1px #ffffff80; }
+.trial-features .trial-feature-icon { display: grid; place-items: center; flex: 0 0 32px; width: 32px; height: 32px; min-height: 0; padding: 0; border-radius: 50%; background: #fff; font-size: 20px; font-weight: 400; }
+@media (min-width: 1101px) and (max-width: 1439px) {
+  .trial-section .trial-description { font-size: clamp(13px, 1.111111vw, 16px); margin-top: 1.388889vw; max-width: 35.902778vw; }
+  .trial-action { margin-top: 3.333333vw; }
+  .trial-section .trial-features { gap: .833333vw; margin-top: 3.333333vw; }
+  .trial-features li { gap: .694444vw; height: 3.333333vw; padding: .277778vw .833333vw .277778vw .277778vw; font-size: .972222vw; }
+  .trial-features .trial-feature-icon { flex-basis: 2.222222vw; width: 2.222222vw; height: 2.222222vw; font-size: 1.388889vw; }
+}
+@media (max-width: 1100px) {
+  .trial-section { height: auto; margin-bottom: 56px; padding: 64px 40px; border-radius: 40px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 32px; }
+  .trial-section > .trial-copy, .trial-section > .trial-visual { position: relative; top: auto; left: auto; width: 100%; }
+  .trial-section h2 { font-size: clamp(32px, 4.3vw, 46px); }
+  .trial-section .trial-description { margin-top: 20px; font-size: 14px; }
+  .trial-description br { display: none; }
+  .trial-action { margin-top: 32px; }
+  .trial-signup { font-size: 16px; }
+  .trial-section .trial-note { margin-top: 20px; line-height: 1.5; }
+  .trial-window { max-width: 376px; }
+  .trial-section .trial-features { margin-top: 24px; gap: 8px; }
+  .trial-features li { gap: 8px; font-size: 12px; }
+  .trial-decoration .trial-clouds { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 65%; }
+  .trial-knight { left: 30%; top: 22%; width: 85%; height: auto; }
+  .trial-pawn { left: 108%; top: 65%; width: 45%; height: auto; }
+}
+@media (max-width: 700px) {
+  .trial-section { display: flex; flex-direction: column; align-items: stretch; gap: 40px; padding: 40px 24px; border-radius: 28px; margin-block: 0 40px; }
+  .trial-section h2 { font-size: clamp(28px, 7.8vw, 46px); }
+  .trial-section .trial-description { font-size: 14px; }
+  .trial-signup { width: 340px; font-size: 15px; }
+  .trial-section > .trial-visual { max-width: 395px; margin-inline: auto; }
+  .trial-section .trial-features { margin: 24px 0 0; gap: 8px; }
+  .trial-knight { left: 12%; top: 45%; width: 135%; }
+  .trial-pawn { left: 120%; top: 80%; width: 65%; }
+}
