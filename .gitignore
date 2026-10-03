@@ -4,3 +4,4 @@ thumbnail.png
 .DS_Store
 node_modules/
 tools/
+ssh_creds.txt

@@ -44,7 +44,7 @@ function closeModals() {
 }
 
 function openTrial() {
-  if (['localhost', '127.0.0.1'].includes(location.hostname)) {
+  if (!['coolchess.ru', 'www.coolchess.ru'].includes(location.hostname)) {
     location.href = trialUrl;
     return;
   }
