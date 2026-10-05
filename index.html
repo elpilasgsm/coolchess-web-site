@@ -13,12 +13,12 @@
   <link rel="stylesheet" href="quiz.css">
   <link rel="stylesheet" href="pricing.css">
   <link rel="stylesheet" href="learning.css">
-  <link rel="stylesheet" href="results.css">
+  <link rel="stylesheet" href="results.css?v=20261005-4">
   <link rel="stylesheet" href="trainers.css">
   <link rel="stylesheet" href="trial.css">
   <link rel="stylesheet" href="moments.css">
   <link rel="stylesheet" href="credentials.css">
-  <script src="main.js" defer></script>
+  <script src="main.js?v=20261005-4" defer></script>
 </head>
 <body>
   <header class="hero" id="top">
@@ -200,15 +200,15 @@
       </div>
       <div class="results-story" aria-label="История Маши, 9 лет">
         <ul class="results-pupils" aria-label="Ученики школы">
-          <li class="results-pupil-current"><span aria-hidden="true">👧</span>Маша, 9 лет</li>
-          <li><span aria-hidden="true">🧚‍♂️</span>Александра, 12 лет</li>
-          <li><span aria-hidden="true">🚼</span>Слава, 4 года</li>
+          <li><button class="results-pupil results-pupil-current" type="button" data-pupil="masha" aria-pressed="true"><span aria-hidden="true">👧</span>Маша, 9 лет</button></li>
+          <li><button class="results-pupil" type="button" data-pupil="alexandra" aria-pressed="false"><span aria-hidden="true">🧚‍♂️</span>Александра, 12 лет</button></li>
+          <li><button class="results-pupil" type="button" data-pupil="slava" aria-pressed="false"><span aria-hidden="true">🚼</span>Слава, 4 года</button></li>
         </ul>
-        <div class="results-portrait"><img src="assets/40.webp" alt="Маша, 9 лет, ученица CoolChess" loading="lazy"></div>
-        <div class="results-story-copy">
-          <div class="results-milestone"><time datetime="2025-11">ноябрь 2025 года</time><div class="results-status"><span>старт</span><span>новичок</span></div></div>
-          <div class="results-milestone results-milestone-now"><time datetime="2026-01">январь 2026 года</time><div class="results-status"><span>сейчас</span><span>турнирный уровень</span></div></div>
-          <p>Пришла, не зная даже всех правил.<br>Через год начала участвовать в турнирах</p>
+        <div class="results-portrait" data-pupil="masha"><img src="assets/40.webp" alt="Маша, 9 лет, ученица CoolChess" loading="lazy"></div>
+        <div class="results-story-copy" aria-live="polite" aria-atomic="true">
+          <div class="results-milestone"><span class="results-story-period">ноябрь 2025 года</span><div class="results-status"><span>старт</span><span class="results-story-level">новичок</span></div></div>
+          <div class="results-milestone results-milestone-now"><span class="results-story-period">январь 2026 года</span><div class="results-status"><span>сейчас</span><span class="results-story-level">турнирный уровень</span></div></div>
+          <p>Пришла, не зная даже всех правил. Постепенно научилась играть увереннее и начала участвовать в турнирах.</p>
         </div>
       </div>
       <div class="results-trial">

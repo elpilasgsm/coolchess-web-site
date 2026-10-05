@@ -110,6 +110,46 @@ document.querySelectorAll('#nav-links a').forEach(link => link.addEventListener(
   document.querySelector('#nav-links').classList.remove('open');
 }));
 
+const pupilStories = {
+  masha: {
+    name: 'Маша, 9 лет', image: 'assets/40.webp', alt: 'Маша, 9 лет, ученица CoolChess',
+    periods: ['ноябрь 2025 года', 'январь 2026 года'], levels: ['новичок', 'турнирный уровень'],
+    text: 'Пришла, не зная даже всех правил. Постепенно научилась играть увереннее и начала участвовать в турнирах.'
+  },
+  alexandra: {
+    name: 'Александра, 12 лет', image: 'assets/story-alexandra.webp', alt: 'Александра, 12 лет',
+    periods: ['на первых занятиях', 'теперь'], levels: ['знает правила', 'играет осознанно'],
+    text: 'Знала правила, но часто ходила наугад. На занятиях научилась замечать угрозы и строить план. Теперь играет вдумчивее и спокойно разбирает ошибки.'
+  },
+  slava: {
+    name: 'Слава, 4 года', image: 'assets/story-slava.webp', alt: 'Слава, 4 года',
+    periods: ['на первых занятиях', 'теперь'], levels: ['первый шаг', 'знает фигуры'],
+    text: 'Сначала фигуры были просто игрушками. Через сказки и короткие задания Слава запомнил их названия и ходы. Теперь сам расставляет шахматы и с интересом решает первые задачки.'
+  }
+};
+const pupilButtons = document.querySelectorAll('.results-pupil');
+const pupilStory = document.querySelector('.results-story');
+const pupilPortrait = pupilStory.querySelector('.results-portrait');
+
+function selectPupil(id) {
+  const story = pupilStories[id];
+  if (!story) return;
+  pupilButtons.forEach(button => {
+    const selected = button.dataset.pupil === id;
+    button.classList.toggle('results-pupil-current', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
+  pupilStory.setAttribute('aria-label', `История: ${story.name}`);
+  pupilPortrait.dataset.pupil = id;
+  const portrait = pupilPortrait.querySelector('img');
+  portrait.src = story.image;
+  portrait.alt = story.alt;
+  pupilStory.querySelectorAll('.results-story-period').forEach((period, index) => period.textContent = story.periods[index]);
+  pupilStory.querySelectorAll('.results-story-level').forEach((level, index) => level.textContent = story.levels[index]);
+  pupilStory.querySelector('.results-story-copy p').textContent = story.text;
+}
+pupilButtons.forEach(button => button.addEventListener('click', () => selectPupil(button.dataset.pupil)));
+
 const trainersDialog = document.querySelector('#trainers-dialog');
 const trainersDialogGrid = trainersDialog.querySelector('.trainers-dialog-grid');
 document.querySelectorAll('#trainers > .trainer-grid > .trainer-card').forEach(card => {

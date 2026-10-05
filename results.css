@@ -14,14 +14,18 @@
 .results-stats p { margin: 8px 0 0; font-family: Inter, Arial, sans-serif; font-size: 16px; line-height: 1.2; white-space: nowrap; }
 .results-story { position: relative; display: grid; grid-template-columns: 320px 240px 320px; align-items: center; gap: 40px; width: 960px; margin: 64px auto 0; }
 .results-pupils { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; margin: 0; padding: 0; list-style: none; }
-.results-pupils li { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 4px 12px 4px 4px; border: 1px solid #fff; border-radius: 100px; background: #a79df366; color: #fff; font-family: 'TT Firs Neue Variable', 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 500; line-height: 1; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: inset 0 1px 2px #ffffff80; }
-.results-pupils .results-pupil-current { background: #a79df3; }
-.results-pupils li > span { display: grid; place-items: center; width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; background: #fff; font-size: 20px; }
+.results-pupils .results-pupil { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 4px 12px 4px 4px; border: 1px solid #fff; border-radius: 100px; background: #ffffff80; color: #392d77; font-family: 'TT Firs Neue Variable', 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 500; line-height: 1; text-align: left; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: inset 0 1px 2px #ffffff80; transition: background .2s, box-shadow .2s; }
+.results-pupils .results-pupil:hover { background: #e7e1ff; }
+.results-pupils .results-pupil-current { background: #6550d8; color: #fff; }
+.results-pupils .results-pupil-current:hover { background: #5943ca; }
+.results-pupil:focus-visible { outline: 3px solid #464bff; outline-offset: 3px; }
+.results-pupil > span { display: grid; place-items: center; width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; background: #fff; font-size: 20px; }
 .results-portrait { position: relative; width: 240px; height: 240px; border-radius: 50%; overflow: hidden; background: #a79df3; }
 .results-portrait img { position: absolute; top: -49px; left: -73px; width: 373px; height: 373px; max-width: none; }
-.results-story-copy { font-family: Inter, Arial, sans-serif; }
+.results-portrait:not([data-pupil="masha"]) img { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.results-story-copy { min-height: 280px; font-family: Inter, Arial, sans-serif; }
 .results-milestone + .results-milestone { margin-top: 20px; }
-.results-milestone time { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 300; line-height: 1.4; letter-spacing: .12em; }
+.results-story-period { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 300; line-height: 1.4; letter-spacing: .12em; }
 .results-status { display: flex; align-items: center; }
 .results-status span { padding: 5px 10px; border-radius: 100px; background: #c8c8c8; font-family: 'TT Firs Neue Variable', 'Segoe UI', Arial, sans-serif; font-size: 14px; line-height: 1; white-space: nowrap; }
 .results-milestone-now .results-status span { background: #eafe5f; }
@@ -61,11 +65,14 @@
   .results-stats article:last-child p { margin: 0; }
   .results-story { display: flex; flex-direction: column; gap: 28px; margin-top: 36px; }
   .results-pupils { flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
-  .results-pupils li { font-size: 13px; min-height: 44px; gap: 8px; padding-right: 10px; }
+  .results-pupils .results-pupil { font-size: 13px; min-height: 44px; gap: 8px; padding-right: 10px; }
   .results-portrait { align-self: center; }
   .results-story-copy { width: min(320px, 100%); }
   .results-background-piece { top: -100px; left: -200px; opacity: .45; }
   .results::after { left: -120px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .results-pupils .results-pupil { transition: none; }
 }
 @media (max-width: 360px) {
   .results-heading h2 { font-size: 34px; }
