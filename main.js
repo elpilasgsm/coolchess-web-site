@@ -6,7 +6,6 @@ const prices = {
 
 const formatPrice = value => new Intl.NumberFormat('ru-RU').format(value) + ' ₽';
 const lessonWord = count => count === 1 ? 'занятие' : count === 4 || count === 24 ? 'занятия' : 'занятий';
-const trialUrl = document.querySelector('#trial-modal iframe').dataset.src;
 let duration = 25;
 let selectedPackage = null;
 let lastFocus = null;
@@ -26,7 +25,7 @@ function renderPrices() {
     button.setAttribute('aria-pressed', String(active));
   });
   document.querySelector('#price-grid').innerHTML = `
-    <button class="price-card price-card-trial" type="button" aria-label="Пробное занятие, 500 рублей. Записаться">
+    <button class="price-card price-card-trial" type="button" aria-label="Пробное занятие, 500 рублей. Перейти к оплате">
       <span class="count">Пробное занятие</span>
       <span class="price-card-bottom"><strong>500 ₽</strong><span class="price-card-arrow" aria-hidden="true">↗</span></span>
     </button>` + tier.items.map(([count, sum]) => `
@@ -53,32 +52,37 @@ function closeModals() {
 }
 
 function openTrial() {
-  if (!['coolchess.ru', 'www.coolchess.ru'].includes(location.hostname)) {
-    location.href = trialUrl;
-    return;
-  }
-  openModal('trial-modal');
-  const frame = document.querySelector('#trial-modal iframe');
-  if (!frame.src) frame.src = frame.dataset.src;
+  openPayment('trial');
 }
 
 function selectPaymentPackage(count) {
-  const item = prices[duration].items.find(([quantity]) => quantity === count);
+  const isTrial = count === 'trial';
+  const item = isTrial ? ['trial', 500] : prices[duration].items.find(([quantity]) => quantity === count);
   if (!item) return;
   selectedPackage = item;
-  document.querySelector('#pay-service').value = `${count} ${lessonWord(count)}`;
+  const service = isTrial ? 'Пробное занятие' : `${count} ${lessonWord(count)}`;
+  document.querySelector('#pay-service').value = service;
   document.querySelector('#pay-sum').value = String(item[1]);
-  document.querySelector('#payment-summary').textContent = `${count} ${lessonWord(count)} · ${formatPrice(item[1])}`;
-  document.querySelectorAll('.payment-option').forEach(button => button.classList.toggle('selected', Number(button.dataset.package) === count));
+  document.querySelector('#payment-summary').textContent = `${service} · ${formatPrice(item[1])}`;
+  document.querySelector('#payment-followup').hidden = !isTrial;
+  document.querySelectorAll('.payment-option').forEach(button => {
+    const selected = button.dataset.package === String(count);
+    button.classList.toggle('selected', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
 }
 
 function openPayment(preselect = null) {
+  const isTrial = preselect === 'trial';
   selectedPackage = null;
   document.querySelector('#pay-service').value = '';
   document.querySelector('#pay-sum').value = '';
-  document.querySelector('#payment-summary').textContent = 'Выберите пакет';
-  document.querySelector('#payment-options').innerHTML = prices[duration].items.map(([count,sum]) => `<button class="payment-option" type="button" data-package="${count}"><span>${count} ${lessonWord(count)}</span><strong>${formatPrice(sum)}</strong></button>`).join('');
-  document.querySelectorAll('[data-package]').forEach(button => button.addEventListener('click', () => selectPaymentPackage(Number(button.dataset.package))));
+  document.querySelector('#payment-title').textContent = isTrial ? 'Оплата пробного урока' : 'Оплата занятий';
+  document.querySelector('#payment-choice-heading').textContent = isTrial ? 'Пробный урок' : 'Выберите занятие или пакет';
+  document.querySelector('#payment-summary').textContent = 'Выберите занятие или пакет';
+  document.querySelector('#payment-followup').hidden = true;
+  document.querySelector('#payment-options').innerHTML = `<button class="payment-option" type="button" data-package="trial" aria-pressed="false"><span>Пробное занятие</span><strong>500 ₽</strong></button>` + (isTrial ? '' : prices[duration].items.map(([count,sum]) => `<button class="payment-option" type="button" data-package="${count}" aria-pressed="false"><span>${count} ${lessonWord(count)}</span><strong>${formatPrice(sum)}</strong></button>`).join(''));
+  document.querySelectorAll('[data-package]').forEach(button => button.addEventListener('click', () => selectPaymentPackage(button.dataset.package === 'trial' ? 'trial' : Number(button.dataset.package))));
   if (preselect) selectPaymentPackage(preselect);
   openModal('payment-modal');
 }
@@ -88,14 +92,76 @@ document.querySelectorAll('[data-duration]').forEach(button => button.addEventLi
   renderPrices();
 }));
 document.querySelectorAll('[data-open-trial]').forEach(button => button.addEventListener('click', openTrial));
+
+const trialFeatures = [...document.querySelectorAll('.trial-features li')].map(feature => {
+  const button = feature.querySelector('.trial-feature-button');
+  const tip = feature.querySelector('.trial-feature-tip');
+  let hovered = false;
+  const hide = () => {
+    tip.hidden = true;
+    button.setAttribute('aria-expanded', 'false');
+    feature.classList.remove('trial-feature-open');
+  };
+  const show = () => {
+    trialFeatures.forEach(other => other.hide());
+    const visual = feature.closest('.trial-visual').getBoundingClientRect();
+    const label = button.getBoundingClientRect();
+    const width = Math.min(340, visual.width);
+    const labelCenter = label.left + label.width / 2;
+    const center = Math.max(visual.left + width / 2, Math.min(labelCenter, visual.right - width / 2));
+    tip.style.width = `${width}px`;
+    tip.style.left = `${center - feature.getBoundingClientRect().left}px`;
+    tip.style.setProperty('--trial-tip-arrow', `${labelCenter - center + width / 2 - 6}px`);
+    tip.hidden = false;
+    button.setAttribute('aria-expanded', 'true');
+    feature.classList.add('trial-feature-open');
+  };
+  feature.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'touch') return;
+    hovered = true;
+    show();
+  });
+  feature.addEventListener('pointerleave', event => {
+    if (event.pointerType === 'touch') return;
+    hovered = false;
+    if (!button.matches(':focus-visible')) hide();
+  });
+  button.addEventListener('focus', () => { if (button.matches(':focus-visible')) show(); });
+  button.addEventListener('blur', () => { if (!hovered) hide(); });
+  button.addEventListener('click', () => { if (tip.hidden) show(); else hide(); });
+  return { feature, hide };
+});
+document.addEventListener('pointerdown', event => {
+  if (!event.target.closest('.trial-features')) trialFeatures.forEach(feature => feature.hide());
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') trialFeatures.forEach(feature => feature.hide());
+});
+window.addEventListener('resize', () => trialFeatures.forEach(feature => feature.hide()));
+
 document.querySelector('#open-payment').addEventListener('click', () => openPayment());
 document.querySelectorAll('[data-close-modal]').forEach(button => button.addEventListener('click', closeModals));
-document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModals(); });
+document.addEventListener('keydown', event => {
+  const modal = document.querySelector('.modal:not([hidden])');
+  if (!modal) return;
+  if (event.key === 'Escape') closeModals();
+  if (event.key !== 'Tab') return;
+  const controls = [...modal.querySelectorAll('button, input, a[href]')].filter(control => !control.disabled && control.getClientRects().length);
+  const first = controls[0];
+  const last = controls[controls.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+});
 document.querySelector('#payment-form').addEventListener('submit', event => {
   if (!selectedPackage) {
     event.preventDefault();
     document.querySelector('#payment-options button')?.focus();
-    alert('Выберите количество занятий.');
+    alert('Выберите занятие или пакет.');
   }
 });
 
@@ -190,9 +256,10 @@ function renderQuiz() {
   } else {
     quizSection.classList.add('quiz-finished');
     quizFlow.innerHTML = `<h2 class="quiz-question quiz-final-title" tabindex="-1">Начнём<br>с пробного урока</h2>
-      <div class="quiz-registration"><iframe title="Регистрация на первый пробный урок в AlfaCRM" loading="eager"></iframe>
-      <a href="${trialUrl}" target="_blank" rel="noopener noreferrer">Открыть форму записи в новом окне ↗</a></div>`;
-    quizFlow.querySelector('iframe').src = trialUrl;
+      <div class="quiz-registration"><p>Первый урок — 500 ₽. После оплаты менеджер свяжется с вами и согласует удобное время занятия.</p>
+      <button class="btn btn-purple" type="button" data-open-trial>Оплатить пробный урок ↗</button>
+      <p class="quiz-payment-note">Без обязательств по покупке абонемента.</p></div>`;
+    quizFlow.querySelector('[data-open-trial]').addEventListener('click', openTrial);
   }
   quizFlow.querySelector('h2').focus({ preventScroll: true });
   quizSection.scrollIntoView({ block: 'start' });

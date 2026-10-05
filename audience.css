@@ -140,7 +140,7 @@
 }
 .audience-card-copy p { margin: 0; color: #000; font-size: 14px; line-height: 1.4; }
 
-.audience-hit { position: absolute; z-index: 3; inset: 0; width: 100%; border: 0; background: transparent; }
+.audience-card > .audience-hit { position: absolute; z-index: 3; inset: 0; width: 100%; height: 100%; border: 0; border-radius: inherit; background: transparent; }
 .audience-hit:focus-visible { outline: 3px solid #111; outline-offset: -6px; border-radius: 32px; }
 .audience-cta {
   position: absolute;

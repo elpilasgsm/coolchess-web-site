@@ -220,12 +220,14 @@
   font-size: 20px;
 }
 
-.quiz-banner.quiz-finished { min-height: 950px; }
-.quiz-finished > .quiz-flow { min-height: 950px; padding: 75px 20px 65px; }
+.quiz-banner.quiz-finished { min-height: 600px; }
+.quiz-finished > .quiz-flow { min-height: 600px; padding: 75px 20px 65px; }
 .quiz-flow .quiz-final-title { font-size: 64px; }
 .quiz-registration { width: min(552px, 100%); margin: 35px auto 0; }
-.quiz-registration iframe { display: block; width: 100%; height: 600px; border: 0; border-radius: 16px; background: #fff; }
-.quiz-registration a { display: inline-block; margin-top: 12px; font-size: 15px; text-decoration: underline; }
+.quiz-registration { padding: 28px; border-radius: 24px; background: #ffffffd9; }
+.quiz-registration p { font-size: 18px; }
+.quiz-registration .btn { max-width: 100%; justify-content: center; }
+.quiz-registration .quiz-payment-note { margin: 16px 0 0; font-size: 14px; }
 
 @media (max-width: 900px) {
   .quiz-banner { border-radius: 36px; }
@@ -252,8 +254,10 @@
   .quiz-options .quiz-option { width: 100%; height: 112px; padding: 12px; font-size: 16px; }
   .quiz-flow .quiz-progress { margin-top: 58px; }
   .quiz-banner.quiz-finished,
-  .quiz-finished > .quiz-flow { min-height: 920px; }
+  .quiz-finished > .quiz-flow { min-height: 600px; }
   .quiz-finished > .quiz-flow { padding-top: 65px; }
   .quiz-flow .quiz-final-title { font-size: clamp(36px, 9vw, 48px); }
-  .quiz-registration iframe { height: 650px; }
+  .quiz-registration { padding: 24px 16px; }
+  .quiz-registration p { font-size: 16px; }
+  .quiz-registration .btn { width: 100%; padding-inline: 16px; }
 }
