@@ -6,6 +6,7 @@ const prices = {
 
 const formatPrice = value => new Intl.NumberFormat('ru-RU').format(value) + ' ₽';
 const lessonWord = count => count === 1 ? 'занятие' : count === 4 || count === 24 ? 'занятия' : 'занятий';
+const trialUrl = document.querySelector('#trial-modal iframe').dataset.src;
 let duration = 25;
 let selectedPackage = null;
 let lastFocus = null;
@@ -33,7 +34,7 @@ function renderPrices() {
       <span class="count">${count} ${lessonWord(count)}</span>
       <span class="price-card-bottom"><span><strong>${formatPrice(sum)}</strong>${count > 1 ? `<small>Стоимость 1 занятия ${formatPrice(Math.round(sum/count))}</small>` : ''}</span><span class="price-card-arrow" aria-hidden="true">↗</span></span>
     </button>`).join('');
-  document.querySelector('.price-card-trial').addEventListener('click', openTrial);
+  document.querySelector('.price-card-trial').addEventListener('click', () => openPayment('trial'));
   document.querySelectorAll('[data-price-count]').forEach(button => button.addEventListener('click', () => openPayment(Number(button.dataset.priceCount))));
 }
 
@@ -52,7 +53,13 @@ function closeModals() {
 }
 
 function openTrial() {
-  openPayment('trial');
+  if (!['coolchess.ru', 'www.coolchess.ru'].includes(location.hostname)) {
+    location.href = trialUrl;
+    return;
+  }
+  openModal('trial-modal');
+  const frame = document.querySelector('#trial-modal iframe');
+  if (!frame.src) frame.src = frame.dataset.src;
 }
 
 function selectPaymentPackage(count) {
@@ -146,7 +153,7 @@ document.addEventListener('keydown', event => {
   if (!modal) return;
   if (event.key === 'Escape') closeModals();
   if (event.key !== 'Tab') return;
-  const controls = [...modal.querySelectorAll('button, input, a[href]')].filter(control => !control.disabled && control.getClientRects().length);
+  const controls = [...modal.querySelectorAll('button, input, a[href], iframe')].filter(control => !control.disabled && control.getClientRects().length);
   const first = controls[0];
   const last = controls[controls.length - 1];
   if (event.shiftKey && document.activeElement === first) {
@@ -178,17 +185,17 @@ document.querySelectorAll('#nav-links a').forEach(link => link.addEventListener(
 
 const pupilStories = {
   masha: {
-    name: 'Маша, 9 лет', image: 'assets/40.webp', alt: 'Маша, 9 лет, ученица CoolChess',
+    name: 'Маша, 9 лет', image: 'assets/story-masha-optimized.webp', alt: 'Маша, 9 лет, ученица CoolChess',
     periods: ['ноябрь 2025 года', 'январь 2026 года'], levels: ['новичок', 'турнирный уровень'],
     text: 'Пришла, не зная даже всех правил. Постепенно научилась играть увереннее и начала участвовать в турнирах.'
   },
   alexandra: {
-    name: 'Александра, 12 лет', image: 'assets/story-alexandra.webp', alt: 'Александра, 12 лет',
+    name: 'Александра, 12 лет', image: 'assets/story-alexandra-optimized.webp', alt: 'Александра, 12 лет',
     periods: ['на первых занятиях', 'теперь'], levels: ['знает правила', 'играет осознанно'],
     text: 'Знала правила, но часто ходила наугад. На занятиях научилась замечать угрозы и строить план. Теперь играет вдумчивее и спокойно разбирает ошибки.'
   },
   slava: {
-    name: 'Слава, 4 года', image: 'assets/story-slava.webp', alt: 'Слава, 4 года',
+    name: 'Слава, 4 года', image: 'assets/story-slava-optimized.webp', alt: 'Слава, 4 года',
     periods: ['на первых занятиях', 'теперь'], levels: ['первый шаг', 'знает фигуры'],
     text: 'Сначала фигуры были просто игрушками. Через сказки и короткие задания Слава запомнил их названия и ходы. Теперь сам расставляет шахматы и с интересом решает первые задачки.'
   }
@@ -196,10 +203,51 @@ const pupilStories = {
 const pupilButtons = document.querySelectorAll('.results-pupil');
 const pupilStory = document.querySelector('.results-story');
 const pupilPortrait = pupilStory.querySelector('.results-portrait');
+const pupilImages = new Map();
+let requestedPupil = 'masha';
 
-function selectPupil(id) {
+function preparePupilImage(id) {
+  if (pupilImages.has(id)) return pupilImages.get(id);
+  const story = pupilStories[id];
+  const image = id === pupilPortrait.dataset.pupil ? pupilPortrait.querySelector('img') : new Image();
+  image.loading = 'eager';
+  image.decoding = 'async';
+  image.alt = story.alt;
+  if (image.getAttribute('src') !== story.image) image.src = story.image;
+  const ready = image.decode().then(() => image).catch(error => {
+    pupilImages.delete(id);
+    throw error;
+  });
+  pupilImages.set(id, ready);
+  return ready;
+}
+
+function preloadPupilImages() {
+  return Promise.allSettled(Object.keys(pupilStories).map(preparePupilImage));
+}
+
+if ('IntersectionObserver' in window) {
+  const pupilObserver = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    preloadPupilImages();
+    pupilObserver.disconnect();
+  }, { rootMargin: '1000px' });
+  pupilObserver.observe(document.querySelector('#results'));
+} else {
+  preloadPupilImages();
+}
+
+async function selectPupil(id) {
   const story = pupilStories[id];
   if (!story) return;
+  requestedPupil = id;
+  let portrait;
+  try {
+    portrait = await preparePupilImage(id);
+  } catch {
+    return;
+  }
+  if (requestedPupil !== id) return;
   pupilButtons.forEach(button => {
     const selected = button.dataset.pupil === id;
     button.classList.toggle('results-pupil-current', selected);
@@ -207,9 +255,7 @@ function selectPupil(id) {
   });
   pupilStory.setAttribute('aria-label', `История: ${story.name}`);
   pupilPortrait.dataset.pupil = id;
-  const portrait = pupilPortrait.querySelector('img');
-  portrait.src = story.image;
-  portrait.alt = story.alt;
+  pupilPortrait.replaceChildren(portrait);
   pupilStory.querySelectorAll('.results-story-period').forEach((period, index) => period.textContent = story.periods[index]);
   pupilStory.querySelectorAll('.results-story-level').forEach((level, index) => level.textContent = story.levels[index]);
   pupilStory.querySelector('.results-story-copy p').textContent = story.text;
@@ -256,10 +302,9 @@ function renderQuiz() {
   } else {
     quizSection.classList.add('quiz-finished');
     quizFlow.innerHTML = `<h2 class="quiz-question quiz-final-title" tabindex="-1">Начнём<br>с пробного урока</h2>
-      <div class="quiz-registration"><p>Первый урок — 500 ₽. После оплаты менеджер свяжется с вами и согласует удобное время занятия.</p>
-      <button class="btn btn-purple" type="button" data-open-trial>Оплатить пробный урок ↗</button>
-      <p class="quiz-payment-note">Без обязательств по покупке абонемента.</p></div>`;
-    quizFlow.querySelector('[data-open-trial]').addEventListener('click', openTrial);
+      <div class="quiz-registration"><iframe title="Регистрация на первый пробный урок в AlfaCRM" loading="eager"></iframe>
+      <a href="${trialUrl}" target="_blank" rel="noopener noreferrer">Открыть форму записи в новом окне ↗</a></div>`;
+    quizFlow.querySelector('iframe').src = trialUrl;
   }
   quizFlow.querySelector('h2').focus({ preventScroll: true });
   quizSection.scrollIntoView({ block: 'start' });

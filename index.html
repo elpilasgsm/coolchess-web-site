@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="refinements.css">
   <link rel="stylesheet" href="hero.css?v=20261005-3">
   <link rel="stylesheet" href="audience.css?v=20261005-6">
-  <link rel="stylesheet" href="quiz.css?v=20261005-6">
+  <link rel="stylesheet" href="quiz.css?v=20261005-6r1">
   <link rel="stylesheet" href="pricing.css">
   <link rel="stylesheet" href="learning.css">
   <link rel="stylesheet" href="results.css?v=20261005-4">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="trial.css?v=20261005-5">
   <link rel="stylesheet" href="moments.css">
   <link rel="stylesheet" href="credentials.css">
-  <script src="main.js?v=20261005-6" defer></script>
+  <script src="main.js?v=20261005-results-1" defer></script>
 </head>
 <body>
   <header class="hero" id="top">
@@ -46,16 +46,16 @@
           <a class="mobile-nav-item" href="#trial">Пробный урок</a>
           <a class="mobile-nav-item" href="#license">Лицензия</a>
           <a class="mobile-nav-item login-link" href="https://coolchess.s20.online/" target="_blank" rel="noopener noreferrer"><img src="assets/16.webp" alt="">Войти</a>
-          <button class="mobile-nav-item nav-signup" type="button" data-open-trial>Оплатить урок</button>
+          <button class="mobile-nav-item nav-signup" type="button" data-open-trial>Записаться</button>
         </div>
       </div>
       <div class="nav-account">
         <a class="login-link" href="https://coolchess.s20.online/" target="_blank" rel="noopener noreferrer"><img src="assets/16.webp" alt="">Войти</a>
-        <button class="nav-signup" type="button" data-open-trial>Оплатить урок</button>
+        <button class="nav-signup" type="button" data-open-trial>Записаться</button>
       </div>
     </nav>
     <h1 class="hero-title"><span>Шахматы,</span><span>которые увлекают.</span><span>Навыки, которые</span><span>остаются</span></h1>
-    <button class="hero-trial" type="button" data-open-trial>Оплатить<br>пробный<br>урок</button>
+    <button class="hero-trial" type="button" data-open-trial>Записаться<br>на пробный<br>урок</button>
     <div class="hero-video-card">
       <video autoplay muted loop playsinline poster="assets/hero-trainer.webp" aria-label="Видео тренера CoolChess"><source src="assets/hero-trainer.mp4" type="video/mp4"></video>
     </div>
@@ -75,7 +75,7 @@
   <main>
     <section class="intro wrap" id="about" aria-label="О школе">
       <div class="intro-top">
-        <div class="intro-copy"><h2>Персональные занятия с&nbsp;профессиональным тренером</h2><button class="btn btn-dark" data-open-trial>Оплатить пробный урок ↗</button><p>Первый урок — 500 ₽. Без обязательств по покупке абонемента.</p></div>
+        <div class="intro-copy"><h2>Персональные занятия с&nbsp;профессиональным тренером</h2><button class="btn btn-dark" data-open-trial>Записаться на пробный урок ↗</button><p>Первый урок — 500 ₽. Без обязательств по покупке абонемента.</p></div>
         <div class="intro-count"><div class="intro-count-copy"><strong>200+</strong><span>счастливых учеников</span></div><div class="intro-avatars" aria-hidden="true"><span><img src="assets/51.webp" alt=""></span><span><img src="assets/52.webp" alt=""></span><span><img src="assets/53.webp" alt=""></span><span class="intro-avatars-more">+</span></div></div>
       </div>
       <div class="benefits-grid">
@@ -99,27 +99,27 @@
           <img class="audience-figure" src="assets/24.webp" alt="Ребёнок с большой синей шахматной фигурой">
           <span class="audience-tag"><span aria-hidden="true">🌱</span> Первый шаг</span>
           <div class="audience-card-copy"><h3>4–7 лет</h3><p>Познакомиться<br>с шахматами<br>через игру</p></div>
-          <button class="audience-hit" type="button" data-open-trial aria-label="Оплатить пробный урок для детей 4–7 лет"></button>
+          <button class="audience-hit" type="button" data-open-trial aria-label="Записаться на занятия для детей 4–7 лет"></button>
         </article>
         <article class="audience-card audience-confident">
           <img class="audience-figure" src="assets/25.webp" alt="Девочка среди шахматных фигур">
           <span class="audience-tag"><span aria-hidden="true">♟</span> Уверенный игрок</span>
           <div class="audience-card-copy"><h3>7–12 лет</h3><p>Систематизировать<br>знания и научиться<br>играть сильнее</p></div>
-          <button class="audience-hit" type="button" data-open-trial aria-label="Оплатить пробный урок для детей 7–12 лет"></button>
+          <button class="audience-hit" type="button" data-open-trial aria-label="Записаться на занятия для детей 7–12 лет"></button>
         </article>
         <article class="audience-card audience-tournament">
           <img class="audience-figure" src="assets/26.webp" alt="Девочка с большой жёлтой шахматной фигурой">
           <span class="audience-tag"><span aria-hidden="true">🏆</span> Турнирный уровень</span>
           <div class="audience-card-copy"><h3>Для детей<br>с опытом</h3><p>Подготовка к соревнованиям<br>и рост рейтинга</p></div>
-          <button class="audience-hit" type="button" data-open-trial aria-label="Оплатить пробный урок по турнирной подготовке"></button>
+          <button class="audience-hit" type="button" data-open-trial aria-label="Записаться на турнирную подготовку"></button>
         </article>
         <article class="audience-card audience-adults">
           <img class="audience-figure" src="assets/27.webp" alt="Взрослая ученица с зелёной шахматной фигурой">
           <span class="audience-tag"><span aria-hidden="true">🕺</span> Взрослые</span>
           <div class="audience-card-copy"><h3>18+ лет</h3><p>Для себя, семьи<br>или возвращения<br>в шахматы</p></div>
-          <button class="audience-hit" type="button" data-open-trial aria-label="Оплатить пробный урок для взрослых"></button>
+          <button class="audience-hit" type="button" data-open-trial aria-label="Записаться на занятия для взрослых"></button>
         </article>
-        <button class="audience-cta" type="button" data-open-trial><span>Оплатить урок</span><b aria-hidden="true">↗</b></button>
+        <button class="audience-cta" type="button" data-open-trial><span>Записаться</span><b aria-hidden="true">↗</b></button>
       </div>
     </section>
 
@@ -204,7 +204,7 @@
           <li><button class="results-pupil" type="button" data-pupil="alexandra" aria-pressed="false"><span aria-hidden="true">🧚‍♂️</span>Александра, 12 лет</button></li>
           <li><button class="results-pupil" type="button" data-pupil="slava" aria-pressed="false"><span aria-hidden="true">🚼</span>Слава, 4 года</button></li>
         </ul>
-        <div class="results-portrait" data-pupil="masha"><img src="assets/40.webp" alt="Маша, 9 лет, ученица CoolChess" loading="lazy"></div>
+        <div class="results-portrait" data-pupil="masha"><img src="assets/story-masha-optimized.webp" alt="Маша, 9 лет, ученица CoolChess" loading="lazy" decoding="async"></div>
         <div class="results-story-copy" aria-live="polite" aria-atomic="true">
           <div class="results-milestone"><span class="results-story-period">ноябрь 2025 года</span><div class="results-status"><span>старт</span><span class="results-story-level">новичок</span></div></div>
           <div class="results-milestone results-milestone-now"><span class="results-story-period">январь 2026 года</span><div class="results-status"><span>сейчас</span><span class="results-story-level">турнирный уровень</span></div></div>
@@ -213,7 +213,7 @@
       </div>
       <div class="results-trial">
         <div class="results-trial-art" aria-hidden="true"><img class="results-trial-pawn" src="assets/14.webp" alt="" loading="lazy"><img class="results-trial-knight" src="assets/17.webp" alt="" loading="lazy"></div>
-        <button class="results-trial-button" type="button" data-open-trial>Оплатить<br>пробный<br>урок</button>
+        <button class="results-trial-button" type="button" data-open-trial>Записаться<br>на пробный<br>урок</button>
       </div>
     </section>
 
@@ -230,7 +230,7 @@
         <article class="trainer-card trainer-alina">
           <div class="trainer-photo"><img src="assets/44.webp" alt="Алина Геннадьевна" loading="lazy"><div class="trainer-tags"><span>5 лет опыта</span></div></div>
           <div class="trainer-copy"><h3>Алина Геннадьевна</h3><p>1 разряд. Участница Всероссийских и&nbsp;Международных турниров</p></div>
-          <button class="trainer-signup" type="button" data-open-trial aria-label="Оплатить пробный урок"><span>Оплатить</span><b aria-hidden="true">↗</b></button>
+          <button class="trainer-signup" type="button" data-open-trial aria-label="Записаться на пробный урок"><span>Записаться</span><b aria-hidden="true">↗</b></button>
         </article>
         <article class="trainer-card trainer-karen">
           <div class="trainer-photo"><img src="assets/45.webp" alt="Карен Владимирович" loading="lazy"><div class="trainer-tags"><span>15 лет опыта</span></div></div>
@@ -258,8 +258,8 @@
         <h2 id="trial-heading">Попробуйте.<br>Познакомьтесь.<br>Решите.</h2>
         <p class="trial-description">Первый урок помогает понять уровень<br> ребёнка, познакомиться с тренером и&nbsp;определить дальнейшую&nbsp;программу</p>
         <div class="trial-action">
-          <button class="trial-signup" type="button" data-open-trial>Оплатить пробный урок</button>
-          <p class="trial-note">Первый урок — 500 ₽. После оплаты менеджер свяжется с вами и согласует время занятия. Без обязательств по покупке абонемента.</p>
+          <button class="trial-signup" type="button" data-open-trial>Записаться на пробный урок</button>
+          <p class="trial-note">Первый урок — 500 ₽. Без обязательств по покупке абонемента.</p>
         </div>
       </div>
       <div class="trial-visual">
@@ -369,7 +369,7 @@
             <p><strong>Сейчас наши дети играют в осеннем турнире 🍂</strong></p>
             <p>Следим за партиями, поддерживаем<br>друг друга и набираемся турнирного опыта</p>
           </div>
-          <button class="kids-tournament-action" type="button" data-open-trial aria-label="Оплатить пробный урок"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="kids-tournament-action" type="button" data-open-trial aria-label="Записаться на пробный урок"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
       </div>
     </section>
@@ -379,6 +379,8 @@
 
   <footer class="footer"><div class="wrap footer-main"><div><img class="footer-logo" src="assets/10.webp" alt="CoolChess"><p>Шахматы, которые увлекают.<br>Навыки, которые остаются.</p></div><div><h3>Навигация</h3><a href="#programs">Программы</a><a href="#pricing">Стоимость</a><a href="#trainers">Тренеры</a><a href="https://lichess.org/team/coolchessonline" target="_blank" rel="noopener noreferrer">Турниры</a></div><div><h3>Контакты</h3><a href="tel:+79185445984">+7 (918) 544-59-84</a><a href="https://wa.me/79185445984" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href="https://vk.com/coolchess_online_public" target="_blank" rel="noopener noreferrer">ВКонтакте ↗</a><a href="https://coolchess.s20.online/" target="_blank" rel="noopener noreferrer">Личный кабинет ↗</a></div><div><h3>Документы</h3><a href="docs/offer.pdf" target="_blank" rel="noopener noreferrer">Договор оферты</a><a href="docs/privacy.pdf" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a><a href="docs/consent.pdf" target="_blank" rel="noopener noreferrer">Согласие на обработку данных</a></div></div><div class="wrap footer-bottom"><span>© CoolChess · ИП Кулиев Э. В.</span><span>ИНН 236101066701 · Лицензия Л035-01218-23/04245470</span></div></footer>
 
+
+  <div class="modal" id="trial-modal" hidden><div class="modal-backdrop" data-close-modal></div><div class="modal-dialog trial-dialog" role="dialog" aria-modal="true" aria-labelledby="trial-title"><div class="modal-head"><h2 id="trial-title">Запись на пробный урок</h2><button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button></div><iframe title="Форма записи на пробный урок AlfaCRM" loading="lazy" data-src="https://coolchess.s20.online/common/1/form/draw?id=1&amp;baseColor=205EDC&amp;borderRadius=8&amp;css=%2F%2Fcdn.alfacrm.pro%2Flead-form%2Fform.css"></iframe></div></div>
 
   <div class="modal" id="payment-modal" hidden><div class="modal-backdrop" data-close-modal></div><div class="modal-dialog payment-dialog" role="dialog" aria-modal="true" aria-labelledby="payment-title"><div class="modal-head"><div><span class="eyebrow">Безопасная оплата</span><h2 id="payment-title">Оплата занятий</h2></div><button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button></div><form id="payment-form" action="https://coolchess1.server.paykeeper.ru/create/" method="POST"><input type="hidden" name="service_name" id="pay-service"><input type="hidden" name="sum" id="pay-sum"><div class="payment-block"><span class="step-number">1</span><div><h3 id="payment-choice-heading">Выберите занятие или пакет</h3><div class="payment-options" id="payment-options"></div><p class="payment-note" id="payment-followup" hidden>После оплаты менеджер свяжется с вами и согласует удобное время пробного урока.</p></div></div><div class="payment-block"><span class="step-number">2</span><div><h3>Укажите ваши данные</h3><div class="field-grid"><label>ФИО<input name="clientid" autocomplete="name" required></label><label>Email<input name="client_email" type="email" autocomplete="email" required></label><label>Телефон<input name="client_phone" type="tel" autocomplete="tel" required></label></div><label class="check"><input type="checkbox" required> <span>Я согласен с <a href="docs/privacy.pdf" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a></span></label><label class="check"><input type="checkbox" required> <span>Я согласен с <a href="docs/video-policy.pdf" target="_blank" rel="noopener noreferrer">политикой использования видеоматериалов</a></span></label><label class="check"><input type="checkbox" required> <span>Я согласен с условиями <a href="docs/offer.pdf" target="_blank" rel="noopener noreferrer">договора оферты</a></span></label></div></div><div class="payment-bottom"><div><span>Выбрано</span><strong id="payment-summary" aria-live="polite">—</strong></div><button class="btn btn-purple" type="submit">Перейти к оплате ↗</button></div><p class="payment-note">Оплата на защищённой странице PayKeeper. Данные карты на этом сайте не вводятся.</p></form></div></div>
 
