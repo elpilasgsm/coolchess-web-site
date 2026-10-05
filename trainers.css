@@ -90,5 +90,8 @@
   .trainers-dialog { max-height: calc(100dvh - 24px); border-radius: 24px; }
   .trainers-dialog-header { gap: 8px; padding: 16px; }
   .trainers-dialog-header h2 { font-size: 23px; }
-  .trainers-dialog-grid { grid-template-columns: 1fr; gap: 20px; padding: 16px; }
+  .trainers-dialog-grid { gap: 20px; padding: 16px; }
+}
+@media (max-width: 600px) {
+  .trainers-dialog-grid { grid-template-columns: 1fr; }
 }

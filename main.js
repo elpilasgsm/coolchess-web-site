@@ -269,6 +269,19 @@ document.querySelector('.trainers-all').addEventListener('click', () => {
   document.body.classList.add('modal-open');
 });
 trainersDialog.addEventListener('close', () => document.body.classList.remove('modal-open'));
+trainersDialog.addEventListener('keydown', event => {
+  if (event.key !== 'Tab') return;
+  const controls = [...trainersDialog.querySelectorAll('button, summary')];
+  const first = controls[0];
+  const last = controls[controls.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus({ preventScroll: true });
+  }
+});
 trainersDialog.addEventListener('click', event => {
   const bounds = trainersDialog.getBoundingClientRect();
   if (event.target === trainersDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) trainersDialog.close();
