@@ -14,11 +14,11 @@
   <link rel="stylesheet" href="pricing.css">
   <link rel="stylesheet" href="learning.css">
   <link rel="stylesheet" href="results.css?v=20261005-4">
-  <link rel="stylesheet" href="trainers.css">
+  <link rel="stylesheet" href="trainers.css?v=20261005-9">
   <link rel="stylesheet" href="trial.css?v=20261005-5">
   <link rel="stylesheet" href="moments.css">
   <link rel="stylesheet" href="credentials.css">
-  <script src="main.js?v=20261005-results-1" defer></script>
+  <script src="main.js?v=20261005-9" defer></script>
 </head>
 <body>
   <header class="hero" id="top">
@@ -243,8 +243,148 @@
       </div>
       <button class="trainers-all" type="button" aria-haspopup="dialog" aria-controls="trainers-dialog"><span>Все преподаватели</span><b aria-hidden="true">↗</b></button>
       <dialog class="trainers-dialog" id="trainers-dialog" aria-labelledby="trainers-dialog-heading">
-        <div class="trainers-dialog-header"><h2 id="trainers-dialog-heading">Все преподаватели</h2><form method="dialog"><button type="submit" aria-label="Закрыть список преподавателей">×</button></form></div>
-        <div class="trainers-dialog-grid"></div>
+        <div class="trainers-dialog-header"><div><h2 id="trainers-dialog-heading">Все преподаватели</h2><p>18 преподавателей школы CoolChess</p></div><form method="dialog"><button type="submit" aria-label="Закрыть список преподавателей" autofocus>×</button></form></div>
+        <!-- Состав, фотографии и биографии: https://coolchess.ru/?block=team, проверено 05.10.2026. -->
+        <div class="trainers-dialog-grid">
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-01.webp" alt="Эльмар Валерьевич" loading="lazy" width="490" height="320"></div>
+            <div class="trainer-copy"><h3>Эльмар Валерьевич</h3>
+              <p class="trainer-qualification">Кандидат технических наук, кандидат в мастера спорта</p>
+              <p>Многократный чемпион города Ейска. Тренер сборной команды Южного федерального университета.</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Эльмар Валерьевич">Подробнее <span aria-hidden="true">＋</span></summary><p>Многократный чемпион города Ейск по шахматам; победитель студенческо-юношеского турнира по шахматам в рамках Этапа Кубка России; призер Всероссийских молодежных лично-командных турниров; Призер X Всероссийского фестиваля студенческого спорта; Тренер сборной команды Южного федерального университета</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-02.webp" alt="Владислав Валерьевич" loading="lazy" width="666" height="1000"></div>
+            <div class="trainer-copy"><h3>Владислав Валерьевич</h3>
+              <p class="trainer-qualification">Мастер ФИДЕ</p>
+              <p>Бронзовый призёр чемпионата мира среди школьников до 19 лет. Чемпион Ростова-на-Дону и Ростовской области.</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Владислав Валерьевич">Подробнее <span aria-hidden="true">＋</span></summary><p>Мастер ФИДЕ по шахматам. Бронзовый призёр чемпионата мира среди школьников до 19 лет. Чемпион Ростова-на-Дону. Чемпион Ростовской области. Многократный победитель и призёр всероссийских студенческих соревнований</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-03.webp" alt="Александр Александрович" loading="lazy" width="735" height="480"></div>
+            <div class="trainer-copy"><h3>Александр Александрович</h3>
+              <p class="trainer-qualification">Мастер ФИДЕ</p>
+              <p>Чемпион России в высшей лиге (2007). Призёр чемпионата Европы среди юниоров (2005).</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Александр Александрович">Подробнее <span aria-hidden="true">＋</span></summary><p>Чемпион России в высшей лиге (2007); Многократный призер чемпионата России в высшей лиге среди юниоров; Призер чемпионата Европы среди юниоров (2005); Многократный чемпион ЮФО среди юниоров; двукратный победитель международного турнира “Archibald Chess”; 3 место в XXVII Międzynarodowy Festiwal Szachowy CRACOVIA&#x27;2016 (Польша, Краков); Трёхкратный чемпион Всероссийских студенческих соревнований &quot;Kalmyk Chess&quot; (2017-2019 г.)</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-04.webp" alt="Дмитрий Вадимович" loading="lazy" width="490" height="320"></div>
+            <div class="trainer-copy"><h3>Дмитрий Вадимович</h3>
+              <p class="trainer-qualification">Международный гроссмейстер</p>
+              <p>Проводит мастер-классы. Среди учеников — Андрей Есипенко, Даниил Юффа, Дмитрий Цой и Арсений Нестеров.</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Дмитрий Вадимович">Подробнее <span aria-hidden="true">＋</span></summary><p>Победитель опен-турниров в Дели и Нови-Саде (2010 год), Берлине (2017), Дитцине (2018). Чемпион Южного, Уральского и Северо-Кавказского федеральных округов по шахматам. Гроссмейстер и журналист В 2015 году занял третье место в номинации &quot;Лучший детский тренер России&quot;. Среди его учеников Андрей Есипенко, Даниил Юффа, Дмитрий Цой, Арсений Нестеров. Серебряный призер чемпионата России по блицу в составе команды &quot;Малахит&quot; (2016). Чемпион СКФО (2017). Победитель крупного рапид-турнира в Серпухове (2018)</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-05.webp" alt="Данил Сергеевич" loading="lazy" width="490" height="320"></div>
+            <div class="trainer-copy"><h3>Данил Сергеевич</h3>
+              <p class="trainer-qualification">Мастер ФИДЕ</p>
+              <p>Трёхкратный чемпион Ростовской области среди мужчин. Участник Высшей лиги чемпионата России.</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Данил Сергеевич">Подробнее <span aria-hidden="true">＋</span></summary><p>Трехкратный чемпион Ростовской области среди мужчин, двукратный победитель Всероссийского турнира «Мемориал Коренского», чемпион ЮФО среди юношей, трехкратный чемпион Ростовской области среди юношей, участник Высшей лиги чемпионата России</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-06.webp" alt="Кирилл Вячеславович" loading="lazy" width="490" height="320"></div>
+            <div class="trainer-copy"><h3>Кирилл Вячеславович</h3>
+              <p class="trainer-qualification">Кандидат в мастера спорта</p>
+              <p>Чемпион Ростова-на-Дону и Ростовской области. Призёр всероссийских лично-командных турниров по быстрым шахматам.</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Кирилл Вячеславович">Подробнее <span aria-hidden="true">＋</span></summary><p>Чемпион города Ростов-на-Дону. Чемпион Ростовской области. Призер Всероссийских лично-командных турниров по быстрым шахматам. Многократный призер и победитель чемпионатов Ростовской области среди студентов</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-07.webp" alt="Карен Владимирович" loading="lazy" width="490" height="320"></div>
+            <div class="trainer-copy"><h3>Карен Владимирович</h3>
+              <p class="trainer-qualification">Кандидат в мастера спорта</p>
+              <p>Призер Ростовской области и Южного федерального округа по шахматам.</p>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-08.webp" alt="Александр Евгеньевич" loading="lazy" width="800" height="916"></div>
+            <div class="trainer-copy"><h3>Александр Евгеньевич</h3>
+              <p class="trainer-qualification">Кандидат в мастера спорта</p>
+              <p>Чемпион Ростовской области по решению шахматных композиций (2022). Вице-чемпион области по классическим шахматам (2021).</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Александр Евгеньевич">Подробнее <span aria-hidden="true">＋</span></summary><p>Чемпион Ростовской области по решению шахматных композиций (2022). Вице-чемпион Ростовской области по классическим шахматам (2021). Бронзовый призер IV международного кубка вузов среди студентов (2024).</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-09.webp" alt="Анастасия Александровна" loading="lazy" width="750" height="1000"></div>
+            <div class="trainer-copy"><h3>Анастасия Александровна</h3>
+              <p class="trainer-qualification">Кандидат в мастера спорта</p>
+              <p>Семикратная чемпионка Воронежской области. Призёр международных шахматных соревнований.</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Анастасия Александровна">Подробнее <span aria-hidden="true">＋</span></summary><p>7-кратная чемпионка Воронежской области. Призер международных шахматных соревнований. Призер МСИИ в составе сборной ВУЗа. 3-кратный победитель кубка Ректора</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-10.webp" alt="Алиса Игоревна" loading="lazy" width="666" height="1000"></div>
+            <div class="trainer-copy"><h3>Алиса Игоревна</h3>
+              <p class="trainer-qualification">Кандидат в мастера спорта</p>
+              <p>Многократная чемпионка Красноярского края. Чемпионка и призёр первенств Сибирского федерального округа среди девушек.</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Алиса Игоревна">Подробнее <span aria-hidden="true">＋</span></summary><p>Многократная чемпионка Красноярского края и многолетний член её сборной; чемпионка и призерка первенств Сибирского Федерального округа среди девушек; победительница различных спартакиад; участница Высшей лиги первенства России, командных чемпионатов России и различных этапов Кубка России</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-11.webp" alt="Дмитрий Юрьевич" loading="lazy" width="490" height="320"></div>
+            <div class="trainer-copy"><h3>Дмитрий Юрьевич</h3>
+              <p class="trainer-qualification">Кандидат в мастера спорта</p>
+              <p>Организатор и судья международных и всероссийских соревнований, этапов Кубка России и чемпионатов России.</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Дмитрий Юрьевич">Подробнее <span aria-hidden="true">＋</span></summary><p>Организовывал Международные турниры - Мемориал Владимира Дворковича: Традиционный летний турнир и Этапы Кубка России по классическим и быстрым шахматам. Судейство Международных и Всероссийских соревнований; этапы Кубков России, Чемпионаты России по классике, блицу и быстрым шахматам.</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-12.webp" alt="Карина Яковлевна" loading="lazy" width="490" height="320"></div>
+            <div class="trainer-copy"><h3>Карина Яковлевна</h3>
+              <p class="trainer-qualification">1 разряд</p>
+              <p>Участница Всероссийских и Международных турниров. С легкостью находит общий язык с детьми.</p>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-13.webp" alt="Алина Геннадьевна" loading="lazy" width="750" height="1000"></div>
+            <div class="trainer-copy"><h3>Алина Геннадьевна</h3>
+              <p class="trainer-qualification">1 разряд</p>
+              <p>Участница Всероссийских и Международных турниров. С легкостью находит общий язык с детьми.</p>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-14.webp" alt="Мария Геннадиевна" loading="lazy" width="800" height="723"></div>
+            <div class="trainer-copy"><h3>Мария Геннадиевна</h3>
+              <p class="trainer-qualification">1 разряд</p>
+              <p>Призёр областных соревнований по быстрым шахматам и классике. Член сборной Южного федерального университета.</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Мария Геннадиевна">Подробнее <span aria-hidden="true">＋</span></summary><p>Многократный призер областных соревнований по быстрым шахматам и классике, победитель Гран-при Ростовской области в своей категории, участница Всероссийских соревнований. Член сборной Южного федерального университета по шахматам</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-15.webp" alt="Светлана Андреевна" loading="lazy" width="666" height="1000"></div>
+            <div class="trainer-copy"><h3>Светлана Андреевна</h3>
+              <p class="trainer-qualification">1 разряд</p>
+              <p>Чемпионка Ростова-на-Дону и Ростовской области. Призёр первенства ЮФО среди девушек (2021).</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Светлана Андреевна">Подробнее <span aria-hidden="true">＋</span></summary><p>Многократная призёрка и чемпионка города Ростов-на-Дону, Ростовской области; областных соревнований. Призёрка первенства Южного Федерального округа среди девушек (2021) Участница Высшей лиги первенства России (2022)</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-16.webp" alt="Екатерина Николаевна" loading="lazy" width="800" height="600"></div>
+            <div class="trainer-copy"><h3>Екатерина Николаевна</h3>
+              <p>Чемпионка Краснодарского края по быстрым шахматам и краевым командным турнирам. Призёр универсиады ЮФУ (2024).</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Екатерина Николаевна">Подробнее <span aria-hidden="true">＋</span></summary><p>Чемпионка Краснодарского края по быстрым шахматам. Чемпионка краевых командных турниров. Многократный победитель муниципальных соревнований. Призер универсиады ЮФУ-2024. Участница сборной ЮФУ</p></details>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-17.webp" alt="Дарья Ярославна" loading="lazy" width="800" height="920"></div>
+            <div class="trainer-copy"><h3>Дарья Ярославна</h3>
+              <p>С легкостью находит общий язык с детьми.</p>
+            </div>
+          </article>
+          <article class="trainer-card trainer-profile">
+            <div class="trainer-photo"><img src="assets/trainers/teacher-18.webp" alt="Любовь Алексеевна" loading="lazy" width="750" height="1000"></div>
+            <div class="trainer-copy"><h3>Любовь Алексеевна</h3>
+              <p class="trainer-qualification">1 разряд</p>
+              <p>Призёр городских и областных соревнований. Ученики — победители детских этапов ДФО и детских первенств России.</p>
+              <details class="trainer-biography"><summary aria-label="Подробнее о преподавателе: Любовь Алексеевна">Подробнее <span aria-hidden="true">＋</span></summary><p>Многократный призер городских и областных соревнований по шахматам. Ученики победители детских этапов Дальневосточного федерального округа, детских первенств России. Победитель краевого этапа всероссийского педагогического конкурса «Сердце отдаю детям 2024» Повышение квалификации от Федерации шахмат России «Психолого-педагогическая подготовка шахматистов-спортсменов к соревнованиям»</p></details>
+            </div>
+          </article>
+        </div>
       </dialog>
     </section>
 

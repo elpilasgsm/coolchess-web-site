@@ -263,14 +263,9 @@ async function selectPupil(id) {
 pupilButtons.forEach(button => button.addEventListener('click', () => selectPupil(button.dataset.pupil)));
 
 const trainersDialog = document.querySelector('#trainers-dialog');
-const trainersDialogGrid = trainersDialog.querySelector('.trainers-dialog-grid');
-document.querySelectorAll('#trainers > .trainer-grid > .trainer-card').forEach(card => {
-  const profile = card.cloneNode(true);
-  profile.querySelector('.trainer-signup')?.remove();
-  trainersDialogGrid.append(profile);
-});
 document.querySelector('.trainers-all').addEventListener('click', () => {
   trainersDialog.showModal();
+  trainersDialog.scrollTop = 0;
   document.body.classList.add('modal-open');
 });
 trainersDialog.addEventListener('close', () => document.body.classList.remove('modal-open'));

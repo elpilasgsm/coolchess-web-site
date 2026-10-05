@@ -35,13 +35,32 @@
 .trainers-all > span { display: grid; place-items: center; min-width: 280px; height: 48px; border: 1px solid #000; border-radius: 100px; background: #fff; }
 .trainer-signup:hover span, .trainers-all:hover > span { background: #eafe5f; }
 .trainer-signup:focus-visible, .trainers-all:focus-visible { outline: 3px solid #5c51ec; outline-offset: 5px; border-radius: 24px; }
-.trainers-dialog { width: min(780px, calc(100% - 32px)); max-height: calc(100dvh - 48px); padding: 24px; border: 0; border-radius: 32px; color: #000; }
+.trainers-dialog { width: min(1080px, calc(100% - 32px)); max-height: calc(100dvh - 48px); padding: 0; border: 0; border-radius: 32px; color: #000; overflow-y: auto; overscroll-behavior: contain; }
 .trainers-dialog::backdrop { background: #11122499; }
-.trainers-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.trainers-dialog-header { position: sticky; z-index: 2; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px; background: #fff; border-bottom: 1px solid #eceaf4; }
 .trainers-dialog-header h2 { margin: 0; font-size: 28px; font-weight: 500; letter-spacing: 0; }
-.trainers-dialog-header button { width: 40px; height: 40px; border: 0; border-radius: 50%; background: #f5f5f5; font-size: 28px; }
-.trainers-dialog-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.trainers .trainers-dialog-grid .trainer-card { width: 100%; }
+.trainers-dialog-header p { margin: 6px 0 0; color: #5d6170; font-size: 14px; }
+.trainers-dialog-header form { margin: 0; flex-shrink: 0; }
+.trainers-dialog-header button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #f5f5f5; color: #000; font-size: 28px; }
+.trainers-dialog-header button:hover { background: #eafe5f; }
+.trainers-dialog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 24px; padding: 24px; }
+.trainers .trainers-dialog-grid .trainer-card { min-width: 0; width: 100%; border-radius: 32px 32px 20px 20px; }
+.trainers-dialog-grid .trainer-photo { height: auto; aspect-ratio: 4 / 3; border-radius: 24px; }
+.trainers .trainers-dialog-grid .trainer-photo img { position: static; display: block; width: 100%; max-width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.trainers-dialog-grid .trainer-copy { margin: 18px 8px 0; }
+.trainers .trainers-dialog-grid .trainer-copy h3 { font-size: 18px; line-height: 1.3; overflow-wrap: anywhere; }
+.trainers .trainers-dialog-grid .trainer-copy p { font-size: 14px; font-weight: 400; line-height: 1.5; overflow-wrap: anywhere; }
+.trainers .trainers-dialog-grid .trainer-copy .trainer-qualification { color: #5145cd; font-weight: 600; }
+.trainer-biography { margin-top: 16px; border-top: 1px solid #dcd9e6; }
+.trainer-biography summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; list-style: none; cursor: pointer; color: #5145cd; font-size: 14px; font-weight: 600; }
+.trainer-biography summary::-webkit-details-marker { display: none; }
+.trainer-biography summary span { font-size: 22px; transition: transform .15s; }
+.trainer-biography[open] summary span { transform: rotate(45deg); }
+.trainers .trainer-biography p { margin-top: 4px; }
+.trainers-dialog-header button:focus-visible, .trainer-biography summary:focus-visible { outline: 3px solid #5c51ec; outline-offset: 3px; border-radius: 8px; }
+@media (max-width: 900px) {
+  .trainers-dialog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 1250px) and (min-width: 1101px) {
   .trainers-heading h2 { font-size: 42px; }
   .trainers-heading p { font-size: 14px; }
@@ -68,7 +87,8 @@
   .trainers .trainer-grid { grid-template-columns: 1fr; width: min(339px, 100%); gap: 48px; }
   .trainers-all { width: min(328px, 100%); font-size: 16px; }
   .trainers-all > span { min-width: 0; flex: 1; }
-  .trainers-dialog { padding: 20px 12px; }
+  .trainers-dialog { max-height: calc(100dvh - 24px); border-radius: 24px; }
+  .trainers-dialog-header { gap: 8px; padding: 16px; }
   .trainers-dialog-header h2 { font-size: 23px; }
-  .trainers-dialog-grid { grid-template-columns: 1fr; }
+  .trainers-dialog-grid { grid-template-columns: 1fr; gap: 20px; padding: 16px; }
 }
